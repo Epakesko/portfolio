@@ -1,0 +1,23 @@
+@use "../styles/_variables.scss" as *;
+
+.header-text {
+    font-size: 36px;
+    width: 1150px;
+    margin: auto;
+    color: $light-gold;
+    display: flex;
+    flex-direction: column;
+  
+    .top-line {
+      text-align: left;
+    }
+    
+    .bottom-line {
+      text-align: right;
+    }
+    
+    .middle-line {
+      font-size: 100px;
+      text-transform: uppercase;
+    }
+  }
