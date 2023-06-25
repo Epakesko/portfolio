@@ -1,0 +1,31 @@
+@use "../../styles/_variables.scss" as *;
+
+.about-me-container {
+  margin: 180px 0;
+  width: 1150px;
+  display: flex;
+  justify-content: space-between;
+
+  .about-me-image {
+    position: relative;
+    background-color: rgba($midnight-blue, 0.4);
+    height: 360px;
+    width: 360px;
+    border-radius: 9px;
+
+    img {
+      position: absolute;
+      top: -25px;
+      left: -25px;
+      height: 100%;
+      width: 100%;
+      border-radius: 9px;
+    }
+  }
+
+  .about-me-text {
+    max-width: 720px;
+    text-align: justify;
+    font-size: 28px;
+  }
+}
