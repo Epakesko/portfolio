@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './Navigation.styles.scss';
+import React from 'react';
 
 type NavigationProps = {
     navItems: string[]
@@ -7,9 +8,15 @@ type NavigationProps = {
 
 const Navigation = ({navItems} : NavigationProps) => {
   const [opacity, setOpacity] = useState(0);
+  const ref = React.useRef<HTMLElement>(null);
   
   useEffect(() => {
-    
+    if(ref.current) {
+      ref.current.style.setProperty('--opacity', opacity.toString());
+    }
+  }, [opacity])
+
+  useEffect(() => {
     const handleScroll = (event: Event) => {
       const scrollY = window.scrollY;
       if(scrollY > 600) setOpacity(0.2);
@@ -24,7 +31,7 @@ const Navigation = ({navItems} : NavigationProps) => {
   }, []);
 
     return ( 
-        <nav className="top-navigation" style={{backgroundColor: `rgba(11, 11, 41, ${opacity})`, borderColor: `rgba(11, 11, 41, ${opacity * 2})`, boxShadow: `0 4px 30px rgba(0, 0, 0, ${opacity})`}}>
+        <nav ref={ref} className="top-navigation">
             <ul className="navigation-items">
                 {navItems.map((item, i) => (
                     <div key={i} className="navigation-item">{item}</div>
