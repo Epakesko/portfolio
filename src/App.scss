@@ -1,10 +1,11 @@
 @use "./styles/_variables.scss" as *;
 
-.App {
-  text-align: center;
+.app-header {
+  width: 100%;
 }
 
-.App-header {
+.app-container {
+  text-align: center;
   background: radial-gradient(ellipse at bottom, $midnight-purple 0%, $midnight-blue 100%);
   min-height: 100vh;
   display: flex;
