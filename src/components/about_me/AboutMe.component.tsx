@@ -8,10 +8,10 @@ const AboutMe = () => {
         <img src={ProfilePicture} alt="" />
       </div>
       <div className="about-me-text">
-        I am a full stack engineer, with over four years of experience of creating reliable digital experiences, helping
-        customers from all around the world in fulfilling their vision. During my time at Webtown, I was recognized for
-        my skills as ..... Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem
-        ipsum dolor sit amet.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna justo, lobortis sed urna sed,
+        convallis dictum sapien. Maecenas sit amet porta ligula. Sed eros justo, ornare non tortor non, lacinia
+        elementum augue. Etiam sit amet fermentum odio. In finibus odio quis urna commodo luctus. Lorem ipsum dolor sit
+        amet, consectetur adipiscing elit.
       </div>
     </div>
   );
