@@ -17,6 +17,7 @@ const Slider = ({ title, description, items }: SliderProps) => {
       <h3>{title}</h3>
       <span>{description}</span>
       <div className="slider-items">
+        <div className="slide-back" />
         {items.map((item, i) => (
           <img
             key={i}
@@ -25,6 +26,7 @@ const Slider = ({ title, description, items }: SliderProps) => {
             alt=""
           />
         ))}
+        <div className="slide-forward" />
       </div>
     </div>
   );
