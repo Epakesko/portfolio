@@ -1,20 +1,53 @@
-@use "../../styles/variables";
+@use "../../styles/variables.scss" as *;
 
 .slider-container {
   margin: 180px 0;
-  width: 1150px;
+  width: 1500px;
 
   .slider-items {
     display: flex;
     justify-content: space-between;
     gap: 10px;
+    width: 1400px;
+    position: relative;
+    height: 500px;
+    perspective: 1000px;
 
     .slider-item {
-      height: 500px;
       width: 650px;
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
+      position: absolute;
+      top: 20px;
+      left: 375px;
+      z-index: 3;
+      --card-scale-offset: 1;
+      --card-rotation-offset: 0;
+      --card-depth-offset: 0;
+      border: 2px solid $midnight-blue;
+
+      transform: rotateY(var(--card-rotation-offset)) scale(var(--card-scale-offset))
+        translateZ(var(--card-depth-offset));
+
+      &.prev-item {
+        left: 0;
+        --card-rotation-offset: 25deg;
+      }
+
+      &.next-item {
+        left: 750px;
+        --card-rotation-offset: -25deg;
+      }
+
+      &.prev-item,
+      &.next-item {
+        --card-scale-offset: 0.8;
+        top: 0;
+        z-index: 2;
+        opacity: 0.4;
+        --card-depth-offset: -100px;
+      }
     }
   }
 }

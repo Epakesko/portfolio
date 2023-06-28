@@ -17,10 +17,13 @@ const Slider = ({ title, description, items }: SliderProps) => {
       <h3>{title}</h3>
       <span>{description}</span>
       <div className="slider-items">
-        {items.map(item => (
-          <div className="slider-item" style={{ backgroundImage: `url(${item.image})` }}>
-            {item.text}
-          </div>
+        {items.map((item, i) => (
+          <img
+            key={i}
+            className={`slider-item ${i === 0 ? "prev-item" : i === 2 ? "next-item" : ""}`}
+            src={item.image}
+            alt=""
+          />
         ))}
       </div>
     </div>
