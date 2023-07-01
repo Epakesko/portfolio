@@ -18,6 +18,38 @@ function App() {
         <Banner />
         <AboutMe />
         <Slider
+          imageSliderOnRight={true}
+          title="MSCI"
+          description="MSCI is a leading financial company. Worked with them for 3 years on various different aspects of their portal."
+          items={[
+            {
+              image: EsgImage,
+              title: "ESG Ratings",
+              description:
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna justo, lobortis sed urna sed, convallis dictum sapien. Maecenas sit amet porta ligula.",
+            },
+            {
+              image: FacsImage,
+              title: "FaCS Report",
+              description:
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna justo, lobortis sed urna sed, convallis dictum sapien. Maecenas sit amet porta ligula.",
+            },
+            {
+              image: SerchImage,
+              title: "Dynamic search",
+              description:
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna justo, lobortis sed urna sed, convallis dictum sapien. Maecenas sit amet porta ligula.",
+            },
+            {
+              image: ResearchForm,
+              title: "Research form",
+              description:
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna justo, lobortis sed urna sed, convallis dictum sapien. Maecenas sit amet porta ligula.",
+            },
+          ]}
+        />
+        <Slider
+          imageSliderOnRight={false}
           title="MSCI"
           description="MSCI is a leading financial company. Worked with them for 3 years on various different aspects of their portal."
           items={[

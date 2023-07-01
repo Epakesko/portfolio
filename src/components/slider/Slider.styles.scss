@@ -3,6 +3,25 @@
 .slider {
   margin: 180px auto;
   width: 1400px;
+  text-align: left;
+
+  .slider-texts {
+    margin-left: 42px;
+
+    &.right-aligned-texts {
+      text-align: right;
+      margin-right: 42px;
+      margin-left: 0;
+    }
+
+    .slider-title {
+      font-size: 63px;
+    }
+    .slider-subtitle {
+      font-size: 20px;
+    }
+  }
+
   .slider-container {
     display: flex;
     justify-content: space-between;
@@ -105,7 +124,7 @@
         }
 
         .item-title {
-          font-size: 56px;
+          font-size: 54px;
         }
 
         .item-description {
