@@ -6,6 +6,7 @@ import Slider from "./components/slider/Slider.component";
 import EsgImage from "./media/msci/esg.png";
 import FacsImage from "./media/msci/facs.png";
 import SerchImage from "./media/msci/search.png";
+import ResearchForm from "./media/msci/research-form.png";
 
 function App() {
   return (
@@ -20,9 +21,30 @@ function App() {
           title="MSCI"
           description="MSCI is a leading financial company. Worked with them for 3 years on various different aspects of their portal."
           items={[
-            { image: EsgImage, text: "ESG Ratings" },
-            { image: FacsImage, text: "FaCS Report" },
-            { image: SerchImage, text: "Dynamic search" },
+            {
+              image: EsgImage,
+              title: "ESG Ratings",
+              description:
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna justo, lobortis sed urna sed, convallis dictum sapien. Maecenas sit amet porta ligula.",
+            },
+            {
+              image: FacsImage,
+              title: "FaCS Report",
+              description:
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna justo, lobortis sed urna sed, convallis dictum sapien. Maecenas sit amet porta ligula.",
+            },
+            {
+              image: SerchImage,
+              title: "Dynamic search",
+              description:
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna justo, lobortis sed urna sed, convallis dictum sapien. Maecenas sit amet porta ligula.",
+            },
+            {
+              image: ResearchForm,
+              title: "Research form",
+              description:
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna justo, lobortis sed urna sed, convallis dictum sapien. Maecenas sit amet porta ligula.",
+            },
           ]}
         />
       </div>

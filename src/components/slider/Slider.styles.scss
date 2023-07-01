@@ -1,80 +1,140 @@
 @use "../../styles/variables.scss" as *;
 
-.slider-container {
+.slider {
   margin: 180px auto;
   width: 1400px;
-
-  .slider-items {
+  .slider-container {
     display: flex;
     justify-content: space-between;
-    gap: 10px;
-    width: 1400px;
-    position: relative;
+    gap: 18px;
     height: 500px;
-    perspective: 1000px;
 
-    .slider-item {
-      width: 650px;
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      position: absolute;
-      top: 20px;
-      left: 375px;
-      z-index: 2;
-      --card-scale-offset: 1;
-      --card-rotation-offset: 0;
-      --card-depth-offset: 0;
-      border: 2px solid $midnight-blue;
+    .slider-items {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      width: 950px;
+      position: relative;
+      height: 500px;
+      perspective: 1000px;
 
-      transform: rotateY(var(--card-rotation-offset)) scale(var(--card-scale-offset))
-        translateZ(var(--card-depth-offset));
-
-      &.prev-item {
-        left: 0;
-        --card-rotation-offset: 25deg;
-      }
-
-      &.next-item {
-        left: 750px;
-        --card-rotation-offset: -25deg;
-      }
-
-      &.prev-item,
-      &.next-item {
-        --card-scale-offset: 0.8;
+      .slider-item {
+        width: 650px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: absolute;
         top: 0;
+        left: 150px;
         z-index: 1;
-        opacity: 0.4;
+        --card-scale-offset: 0.8;
+        --card-rotation-offset: 0;
         --card-depth-offset: -100px;
+        opacity: 0.4;
+        border: 2px solid $midnight-blue;
+        transition: all 0.7s cubic-bezier(0.65, 0.05, 0.36, 1);
+
+        transform: rotateY(var(--card-rotation-offset)) scale(var(--card-scale-offset))
+          translateZ(var(--card-depth-offset));
+
+        &.prev-item {
+          left: 0;
+          --card-rotation-offset: 25deg;
+        }
+
+        &.next-item {
+          left: 300px;
+          --card-rotation-offset: -25deg;
+        }
+
+        &.current-item {
+          z-index: 2;
+          top: 20px;
+          --card-scale-offset: 1;
+          --card-depth-offset: 0;
+          opacity: 1;
+        }
+      }
+
+      .slide-back,
+      .slide-forward {
+        height: 20px;
+        width: 20px;
+        position: absolute;
+        background: none;
+        border-left: 5px solid $midnight-purple;
+        border-top: 5px solid $midnight-purple;
+        border-right: none;
+        border-bottom: none;
+        top: calc(50% - 20px);
+        z-index: 2;
+        transition: 0.2s border-color ease-in-out;
+
+        &:hover {
+          border-color: $midnight-blue;
+          cursor: pointer;
+        }
+      }
+
+      .slide-back {
+        transform: rotateZ(-45deg);
+        left: 100px;
+      }
+
+      .slide-forward {
+        transform: rotateZ(135deg);
+        right: 100px;
       }
     }
 
-    .slide-back,
-    .slide-forward {
-      height: 20px;
-      width: 20px;
-      position: absolute;
-      border-left: 5px solid $midnight-purple;
-      border-top: 5px solid $midnight-purple;
-      top: calc(50% - 20px);
-      z-index: 2;
-      transition: 0.2s border-color ease-in-out;
+    .item-texts {
+      position: relative;
+      flex: 1;
 
-      &:hover {
-        border-color: $midnight-blue;
-        cursor: pointer;
+      .item-text-container {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        .item-title,
+        .item-description {
+          transform: translateY(var(--text-position-offset));
+          --text-position-offset: 0;
+          transition: all 0.4s cubic-bezier(0.39, 0.58, 0.57, 1);
+          opacity: 0;
+        }
+
+        .item-title {
+          font-size: 56px;
+        }
+
+        .item-description {
+          transition-delay: 0.2s;
+        }
+
+        &.current-item {
+          &.fade-out {
+            .item-title,
+            .item-description {
+              --text-position-offset: -60px;
+              opacity: 0;
+            }
+          }
+
+          .item-title,
+          .item-description {
+            opacity: 1;
+          }
+        }
+
+        &.prev-item,
+        &.next-item {
+          .item-title,
+          .item-description {
+            --text-position-offset: 60px;
+          }
+        }
       }
-    }
-
-    .slide-back {
-      transform: rotateZ(-45deg);
-      left: 100px;
-    }
-
-    .slide-forward {
-      transform: rotateZ(135deg);
-      right: 100px;
     }
   }
 }
