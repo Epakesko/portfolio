@@ -1,28 +1,42 @@
 @use "../../styles/_variables.scss" as *;
 
 .about-me-container {
-  margin: auto;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  gap: 18px;
+  margin: auto;
   margin-bottom: 135px;
 
   .about-me-image {
-    position: relative;
-    width: 31%;
     display: flex;
+    position: relative;
+    justify-content: center;
     align-items: center;
 
     img {
-      height: 360px;
-      width: 360px;
       border-radius: 9px;
+      width: 80%;
     }
   }
 
   .about-me-text {
-    max-width: 62%;
-    text-align: justify;
     font-size: 18px;
+    text-align: justify;
+  }
+}
+
+@media only screen and (min-width: $tablet) {
+  .about-me-container {
+    flex-direction: row;
+
+    .about-me-image {
+      width: 31%;
+    }
+
+    .about-me-text {
+      max-width: 62%;
+    }
   }
 }
