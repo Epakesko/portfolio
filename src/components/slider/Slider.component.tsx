@@ -46,11 +46,11 @@ const ImageSlider = ({ handleSlide, items, transitioning, startIndex }: ImageSli
     const touchEnd = e.changedTouches[0].clientX;
     const diff = touchStartPos - touchEnd;
 
-    if (diff > 5) {
+    if (diff > 30) {
       handleSlide(true);
     }
 
-    if (diff < -5) {
+    if (diff < -30) {
       handleSlide(false);
     }
 
