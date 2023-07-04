@@ -1,31 +1,28 @@
 @use "../../styles/_variables.scss" as *;
 
 .about-me-container {
-  margin: 180px auto;
-  width: 1150px;
+  margin: auto;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 135px;
 
   .about-me-image {
     position: relative;
-    background-color: rgba($midnight-blue, 0.4);
-    height: 360px;
-    width: 360px;
-    border-radius: 9px;
+    width: 31%;
+    display: flex;
+    align-items: center;
 
     img {
-      position: absolute;
-      top: -25px;
-      left: -25px;
-      height: 100%;
-      width: 100%;
+      height: 360px;
+      width: 360px;
       border-radius: 9px;
     }
   }
 
   .about-me-text {
-    max-width: 720px;
+    max-width: 62%;
     text-align: justify;
-    font-size: 28px;
+    font-size: 18px;
   }
 }

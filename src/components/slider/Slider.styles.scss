@@ -1,59 +1,54 @@
 @use "../../styles/variables.scss" as *;
 
 .slider {
-  margin: 180px auto;
-  width: 1400px;
-  text-align: left;
+  width: 100%;
+  margin-bottom: 36px;
 
   .slider-texts {
-    margin-left: 42px;
+    margin-bottom: 36px;
 
     &.right-aligned-texts {
       text-align: right;
-      margin-right: 42px;
-      margin-left: 0;
     }
 
     .slider-title {
-      font-size: 63px;
+      font-size: 36px;
+      font-weight: 500;
     }
     .slider-subtitle {
-      font-size: 20px;
+      font-size: 16px;
     }
   }
 
   .slider-container {
     display: flex;
     justify-content: space-between;
-    gap: 18px;
-    height: 500px;
+    gap: 6%;
 
     .slider-items {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      width: 950px;
+      width: 60%;
       position: relative;
-      height: 500px;
       perspective: 1000px;
 
       .slider-item {
-        width: 650px;
+        width: 74%;
+        max-height: 500px;
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
         position: absolute;
-        top: 0;
-        left: 150px;
+        top: 50%;
+        left: 13%;
         z-index: 1;
         --card-scale-offset: 0.8;
         --card-rotation-offset: 0;
         --card-depth-offset: -100px;
+        --card-y-offset: 0;
         opacity: 0.4;
         border: 2px solid $midnight-blue;
         transition: all 0.7s cubic-bezier(0.65, 0.05, 0.36, 1);
 
-        transform: rotateY(var(--card-rotation-offset)) scale(var(--card-scale-offset))
+        transform: translateY(-50%) rotateY(var(--card-rotation-offset)) scale(var(--card-scale-offset))
           translateZ(var(--card-depth-offset));
 
         &.prev-item {
@@ -62,16 +57,16 @@
         }
 
         &.next-item {
-          left: 300px;
+          left: 26%;
           --card-rotation-offset: -25deg;
         }
 
         &.current-item {
           z-index: 2;
-          top: 20px;
           --card-scale-offset: 1;
           --card-depth-offset: 0;
           opacity: 1;
+          position: relative;
         }
       }
 
@@ -85,8 +80,10 @@
         border-top: 5px solid $midnight-purple;
         border-right: none;
         border-bottom: none;
-        top: calc(50% - 20px);
-        z-index: 2;
+        top: 50%;
+        --button-rotation-offset: 0;
+        transform: translateY(-50%) rotateZ(var(--button-rotation-offset));
+        z-index: 3;
         transition: 0.2s border-color ease-in-out;
 
         &:hover {
@@ -96,13 +93,13 @@
       }
 
       .slide-back {
-        transform: rotateZ(-45deg);
-        left: 100px;
+        --button-rotation-offset: -45deg;
+        left: 10%;
       }
 
       .slide-forward {
-        transform: rotateZ(135deg);
-        right: 100px;
+        --button-rotation-offset: 135deg;
+        right: 10%;
       }
     }
 
@@ -114,6 +111,7 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
+        display: none;
 
         .item-title,
         .item-description {
@@ -124,7 +122,8 @@
         }
 
         .item-title {
-          font-size: 54px;
+          font-size: 27px;
+          font-weight: 500;
         }
 
         .item-description {
@@ -132,6 +131,8 @@
         }
 
         &.current-item {
+          display: block;
+
           &.fade-out {
             .item-title,
             .item-description {
@@ -148,6 +149,10 @@
 
         &.prev-item,
         &.next-item {
+          &.fade-in {
+            display: block;
+          }
+
           .item-title,
           .item-description {
             --text-position-offset: 60px;

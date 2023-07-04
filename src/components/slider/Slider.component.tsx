@@ -60,11 +60,11 @@ const TextSlider = ({ items, transitioning, startIndex }: TextSliderProps) => {
           key={i}
           className={`item-text-container ${
             (i + startIndex) % items.length === 0
-              ? "prev-item"
+              ? `prev-item ${transitioning ? "fade-in" : ""}`
               : (i + startIndex) % items.length === 1
               ? `current-item ${transitioning ? "fade-out" : ""}`
               : (i + startIndex) % items.length === 2
-              ? "next-item"
+              ? `next-item ${transitioning ? "fade-in" : ""}`
               : ""
           }`}
         >
