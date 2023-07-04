@@ -1,19 +1,29 @@
 {
   "files": {
-    "main.css": "/static/css/main.b7c98b8c.css",
-    "main.js": "/static/js/main.01337868.js",
+    "main.css": "/static/css/main.d1e8f2a4.css",
+    "main.js": "/static/js/main.fe3b9288.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
+    "static/media/fragments.png": "/static/media/fragments.449a80963e3b0744d454.png",
+    "static/media/esg.png": "/static/media/esg.6dd7b32c3b948598c386.png",
+    "static/media/ltv_calculator.png": "/static/media/ltv_calculator.db9ce0b644b6464f6ed3.png",
+    "static/media/search.png": "/static/media/search.5ad9641eb559f92068a7.png",
+    "static/media/mortgage_calculator.png": "/static/media/mortgage_calculator.b24a51b03c11ce7025de.png",
+    "static/media/research-form.png": "/static/media/research-form.5a8452528fb80ed0bb08.png",
+    "static/media/facs.png": "/static/media/facs.c6d0392232dab59092fd.png",
     "static/media/profile-picture.jpg": "/static/media/profile-picture.9ebe4b430828d56eb11f.jpg",
+    "static/media/manrope-bold.woff2": "/static/media/manrope-bold.02fde8ae851aacf5c6a9.woff2",
+    "static/media/manrope-medium.woff2": "/static/media/manrope-medium.02fde8ae851aacf5c6a9.woff2",
+    "static/media/manrope-regular.woff2": "/static/media/manrope-regular.02fde8ae851aacf5c6a9.woff2",
+    "static/media/manrope-semibold.woff2": "/static/media/manrope-semibold.02fde8ae851aacf5c6a9.woff2",
     "static/media/sen-regular.woff2": "/static/media/sen-regular.8c00ec432771ee7d9499.woff2",
     "static/media/manrope-thin.woff2": "/static/media/manrope-thin.de406e55c1428924d2c1.woff2",
-    "static/media/manrope-regular.woff2": "/static/media/manrope-regular.a7aef7eba7311a8c8c25.woff2",
     "index.html": "/index.html",
-    "main.b7c98b8c.css.map": "/static/css/main.b7c98b8c.css.map",
-    "main.01337868.js.map": "/static/js/main.01337868.js.map",
+    "main.d1e8f2a4.css.map": "/static/css/main.d1e8f2a4.css.map",
+    "main.fe3b9288.js.map": "/static/js/main.fe3b9288.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b7c98b8c.css",
-    "static/js/main.01337868.js"
+    "static/css/main.d1e8f2a4.css",
+    "static/js/main.fe3b9288.js"
   ]
 }
