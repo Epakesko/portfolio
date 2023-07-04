@@ -1,29 +1,42 @@
+@use "../../styles/variables" as *;
+
 .divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
   margin: 36px auto;
   font-size: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 9px;
   text-transform: uppercase;
-  scroll-margin-top: 120px;
 
   &:before,
   &:after {
     --gradient-direction: 0;
-    content: "";
-    background: linear-gradient(var(--gradient-direction), rgba(240, 240, 240, 0), #fff);
     display: block;
+    background: linear-gradient(var(--gradient-direction), rgba(240, 240, 240, 0), #fff);
     height: 1px;
+    content: "";
   }
 
   &:before {
-    width: 90px;
     --gradient-direction: to right;
+    width: 90px;
   }
 
   &:after {
-    width: 270px;
     --gradient-direction: to left;
+    width: 90px;
+  }
+}
+
+@media only screen and (min-width: $tablet) {
+  .divider {
+    justify-content: flex-start;
+    scroll-margin-top: 120px;
+
+    &:after {
+      --gradient-direction: to left;
+      width: 270px;
+    }
   }
 }
