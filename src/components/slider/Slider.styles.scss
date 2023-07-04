@@ -33,13 +33,9 @@
       gap: 18px;
       perspective: 1000px;
 
-      .right-aligned {
-        order: 2;
-      }
-
       .slider-item {
         --card-y-offset: 0;
-        --card-depth-offset: -100px;
+        --card-depth-offset: -200px;
         position: absolute;
         transform: translateX(var(--card-y-offset)) translateZ(var(--card-depth-offset));
         opacity: 0;
@@ -54,8 +50,8 @@
 
         &.prev-item,
         &.next-item {
-          --card-depth-offset: -50px;
-          opacity: 0.8;
+          --card-depth-offset: -100px;
+          opacity: 0.6;
         }
 
         &.prev-item {
@@ -76,40 +72,14 @@
 
       .slide-back,
       .slide-forward {
-        --button-rotation-offset: 0;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%) rotateZ(var(--button-rotation-offset));
-        z-index: 3;
-        transition: 0.2s border-color ease-in-out;
-        border-top: 5px solid $midnight-purple;
-        border-right: none;
-        border-bottom: none;
-        border-left: 5px solid $midnight-purple;
-        background: none;
-        width: 20px;
-        height: 20px;
-
-        &:hover {
-          cursor: pointer;
-          border-color: $midnight-blue;
-        }
-      }
-
-      .slide-back {
-        --button-rotation-offset: -45deg;
-        left: 5%;
-      }
-
-      .slide-forward {
-        --button-rotation-offset: 135deg;
-        right: 5%;
+        display: none;
       }
     }
 
     .item-texts {
       position: relative;
       flex: 1;
+      order: 2;
 
       .item-text-container {
         display: none;
@@ -125,7 +95,7 @@
 
         .item-title {
           font-weight: 500;
-          font-size: 27px;
+          font-size: 22px;
         }
 
         .item-description {
@@ -202,9 +172,48 @@
             opacity: 1;
           }
         }
+
+        .slide-back,
+        .slide-forward {
+          --button-rotation-offset: 0;
+          display: block;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%) rotateZ(var(--button-rotation-offset));
+          z-index: 3;
+          transition: 0.2s border-color ease-in-out;
+          border-top: 5px solid $midnight-purple;
+          border-right: none;
+          border-bottom: none;
+          border-left: 5px solid $midnight-purple;
+          background: none;
+          width: 20px;
+          height: 20px;
+
+          &:hover {
+            cursor: pointer;
+            border-color: $midnight-blue;
+          }
+        }
+
+        .slide-back {
+          --button-rotation-offset: -45deg;
+          left: 5%;
+        }
+
+        .slide-forward {
+          --button-rotation-offset: 135deg;
+          right: 5%;
+        }
       }
 
       .item-texts {
+        order: unset;
+
+        &.right-aligned {
+          order: 2;
+        }
+
         .item-text-container {
           top: 50%;
           transform: translateY(-50%);

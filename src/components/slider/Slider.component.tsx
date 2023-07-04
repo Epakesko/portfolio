@@ -22,14 +22,43 @@ type ImageSliderProps = {
 };
 
 type TextSliderProps = {
+  className: string;
   items: SliderItem[];
   transitioning: boolean;
   startIndex: number;
 };
 
 const ImageSlider = ({ handleSlide, items, transitioning, startIndex }: ImageSliderProps) => {
+  const [touchPosition, setTouchPosition] = useState<number | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    const touchStartPos = e.touches[0].clientX;
+    setTouchPosition(touchStartPos);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    const touchStartPos = touchPosition;
+
+    if (touchStartPos === null) {
+      return;
+    }
+
+    const touchEnd = e.changedTouches[0].clientX;
+    const diff = touchStartPos - touchEnd;
+
+    if (diff > 5) {
+      handleSlide(true);
+    }
+
+    if (diff < -5) {
+      handleSlide(false);
+    }
+
+    setTouchPosition(null);
+  };
+
   return (
-    <div className="slider-items">
+    <div className="slider-items" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
       <button className="slide-back" onClick={() => handleSlide(false)} disabled={transitioning} />
       {items.map((item, i) => (
         <img
@@ -52,9 +81,9 @@ const ImageSlider = ({ handleSlide, items, transitioning, startIndex }: ImageSli
   );
 };
 
-const TextSlider = ({ items, transitioning, startIndex }: TextSliderProps) => {
+const TextSlider = ({ className, items, transitioning, startIndex }: TextSliderProps) => {
   return (
-    <div className="item-texts">
+    <div className={`item-texts ${className}`}>
       {items.map((item, i) => (
         <div
           key={i}
@@ -90,12 +119,6 @@ const Slider = ({ title, description, items, imageSliderOnRight = false }: Slide
     }, 500);
   };
 
-  const imageSlider = (
-    <ImageSlider handleSlide={slide} items={items} transitioning={transitioning} startIndex={startIndex} />
-  );
-
-  const textSlider = <TextSlider items={items} transitioning={transitioning} startIndex={textStartIndex} />;
-
   return (
     <div className="slider">
       <div className={`slider-texts ${imageSliderOnRight ? "right-aligned-texts" : ""}`}>
@@ -103,9 +126,13 @@ const Slider = ({ title, description, items, imageSliderOnRight = false }: Slide
         <div className="slider-subtitle">{description}</div>
       </div>
       <div className="slider-container">
-        {!imageSliderOnRight && imageSlider}
-        {textSlider}
-        {imageSliderOnRight && imageSlider}
+        <TextSlider
+          className={`${imageSliderOnRight ? "right-aligned" : ""}`}
+          items={items}
+          transitioning={transitioning}
+          startIndex={textStartIndex}
+        />
+        <ImageSlider handleSlide={slide} items={items} transitioning={transitioning} startIndex={startIndex} />
       </div>
     </div>
   );
