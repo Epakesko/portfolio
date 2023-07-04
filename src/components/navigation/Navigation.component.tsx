@@ -28,8 +28,8 @@ const Navigation = ({ navItems }: NavigationProps) => {
   useEffect(() => {
     const handleScroll = (event: Event) => {
       const scrollY = window.scrollY;
-      if (scrollY > 600) setOpacity(0.2);
-      else setOpacity((scrollY / 600) * 0.2);
+      if (scrollY > 600) setOpacity(0.3);
+      else setOpacity((scrollY / 600) * 0.3);
     };
 
     window.addEventListener("scroll", handleScroll);

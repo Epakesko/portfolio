@@ -51,7 +51,7 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
     box-shadow: 0 4px 30px rgba(0, 0, 0, var(--opacity));
     border: 1px solid rgba($midnight-blue, calc(var(--opacity) * 2));
     border-bottom-right-radius: 9px;
