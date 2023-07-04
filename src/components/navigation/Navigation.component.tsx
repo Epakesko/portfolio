@@ -2,8 +2,13 @@ import { useEffect, useState } from "react";
 import "./Navigation.styles.scss";
 import React from "react";
 
+type NavItemProps = {
+  text: string;
+  sectionRef?: React.MutableRefObject<HTMLDivElement | null>;
+};
+
 type NavigationProps = {
-  navItems: string[];
+  navItems: NavItemProps[];
 };
 
 const Navigation = ({ navItems }: NavigationProps) => {
@@ -30,12 +35,16 @@ const Navigation = ({ navItems }: NavigationProps) => {
     };
   }, []);
 
+  const handleClick = (sectionRef: React.MutableRefObject<HTMLDivElement | null>) => {
+    if (sectionRef.current) sectionRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <nav ref={ref} className="top-navigation">
       <ul className="navigation-items">
         {navItems.map((item, i) => (
-          <div key={i} className="navigation-item">
-            {item}
+          <div key={i} className="navigation-item" onClick={() => item.sectionRef && handleClick(item.sectionRef)}>
+            {item.text}
           </div>
         ))}
       </ul>

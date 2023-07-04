@@ -1,0 +1,29 @@
+.divider {
+  margin: 36px auto;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 9px;
+  text-transform: uppercase;
+  scroll-margin-top: 120px;
+
+  &:before,
+  &:after {
+    --gradient-direction: 0;
+    content: "";
+    background: linear-gradient(var(--gradient-direction), rgba(240, 240, 240, 0), #fff);
+    display: block;
+    height: 1px;
+  }
+
+  &:before {
+    width: 90px;
+    --gradient-direction: to right;
+  }
+
+  &:after {
+    width: 270px;
+    --gradient-direction: to left;
+  }
+}
