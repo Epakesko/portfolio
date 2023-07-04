@@ -5,14 +5,15 @@
 }
 
 .app-container {
-  background: radial-gradient(ellipse at bottom, $midnight-purple 0%, $midnight-blue 100%);
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  background: radial-gradient(ellipse at bottom, $midnight-purple 0%, $midnight-blue 100%);
+  min-height: 100vh;
 }
 
 .app-body {
-  max-width: 75%;
+  width: 75%;
+  max-width: 1150px;
 }
