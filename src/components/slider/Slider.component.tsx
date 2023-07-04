@@ -83,10 +83,10 @@ const Slider = ({ title, description, items, imageSliderOnRight = false }: Slide
 
   const slide = (forward: boolean) => {
     isTransitioning(true);
-    setStartIndex((startIndex + items.length + (forward ? 1 : -1)) % items.length);
+    setStartIndex(startIndex => (startIndex + items.length + (forward ? -1 : 1)) % items.length);
     setTimeout(() => {
       isTransitioning(false);
-      setTextStartIndex((textStartIndex + items.length + (forward ? 1 : -1)) % items.length);
+      setTextStartIndex(textStartIndex => (textStartIndex + items.length + (forward ? -1 : 1)) % items.length);
     }, 500);
   };
 

@@ -1,8 +1,8 @@
 @use "../../styles/variables.scss" as *;
 
 .slider {
+  margin-bottom: 72px;
   width: 100%;
-  margin-bottom: 36px;
 
   .slider-texts {
     margin-bottom: 36px;
@@ -12,8 +12,8 @@
     }
 
     .slider-title {
-      font-size: 36px;
       font-weight: 500;
+      font-size: 36px;
     }
     .slider-subtitle {
       font-size: 16px;
@@ -22,84 +22,88 @@
 
   .slider-container {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    gap: 6%;
+    gap: 18px;
 
     .slider-items {
-      width: 60%;
+      display: flex;
       position: relative;
+      justify-content: center;
+      gap: 18px;
       perspective: 1000px;
 
+      .right-aligned {
+        order: 2;
+      }
+
       .slider-item {
-        width: 74%;
-        max-height: 500px;
+        --card-y-offset: 0;
+        --card-depth-offset: -100px;
+        position: absolute;
+        transform: translateX(var(--card-y-offset)) translateZ(var(--card-depth-offset));
+        opacity: 0;
+        z-index: 1;
+        transition: all 0.7s cubic-bezier(0.65, 0.05, 0.36, 1);
+        border: 2px solid $midnight-blue;
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
-        position: absolute;
-        top: 50%;
-        left: 13%;
-        z-index: 1;
-        --card-scale-offset: 0.8;
-        --card-rotation-offset: 0;
-        --card-depth-offset: -100px;
-        --card-y-offset: 0;
-        opacity: 0.4;
-        border: 2px solid $midnight-blue;
-        transition: all 0.7s cubic-bezier(0.65, 0.05, 0.36, 1);
+        width: 90%;
+        max-height: 500px;
 
-        transform: translateY(-50%) rotateY(var(--card-rotation-offset)) scale(var(--card-scale-offset))
-          translateZ(var(--card-depth-offset));
+        &.prev-item,
+        &.next-item {
+          --card-depth-offset: -50px;
+          opacity: 0.8;
+        }
 
         &.prev-item {
-          left: 0;
-          --card-rotation-offset: 25deg;
+          --card-y-offset: -90%;
         }
 
         &.next-item {
-          left: 26%;
-          --card-rotation-offset: -25deg;
+          --card-y-offset: 90%;
         }
 
         &.current-item {
-          z-index: 2;
-          --card-scale-offset: 1;
           --card-depth-offset: 0;
-          opacity: 1;
           position: relative;
+          opacity: 1;
+          z-index: 2;
         }
       }
 
       .slide-back,
       .slide-forward {
-        height: 20px;
-        width: 20px;
-        position: absolute;
-        background: none;
-        border-left: 5px solid $midnight-purple;
-        border-top: 5px solid $midnight-purple;
-        border-right: none;
-        border-bottom: none;
-        top: 50%;
         --button-rotation-offset: 0;
+        position: absolute;
+        top: 50%;
         transform: translateY(-50%) rotateZ(var(--button-rotation-offset));
         z-index: 3;
         transition: 0.2s border-color ease-in-out;
+        border-top: 5px solid $midnight-purple;
+        border-right: none;
+        border-bottom: none;
+        border-left: 5px solid $midnight-purple;
+        background: none;
+        width: 20px;
+        height: 20px;
 
         &:hover {
-          border-color: $midnight-blue;
           cursor: pointer;
+          border-color: $midnight-blue;
         }
       }
 
       .slide-back {
         --button-rotation-offset: -45deg;
-        left: 10%;
+        left: 5%;
       }
 
       .slide-forward {
         --button-rotation-offset: 135deg;
-        right: 10%;
+        right: 5%;
       }
     }
 
@@ -108,22 +112,20 @@
       flex: 1;
 
       .item-text-container {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
         display: none;
+        position: absolute;
 
         .item-title,
         .item-description {
-          transform: translateY(var(--text-position-offset));
           --text-position-offset: 0;
-          transition: all 0.4s cubic-bezier(0.39, 0.58, 0.57, 1);
+          transform: translateY(var(--text-position-offset));
           opacity: 0;
+          transition: all 0.4s cubic-bezier(0.39, 0.58, 0.57, 1);
         }
 
         .item-title {
-          font-size: 27px;
           font-weight: 500;
+          font-size: 27px;
         }
 
         .item-description {
@@ -132,6 +134,7 @@
 
         &.current-item {
           display: block;
+          position: relative;
 
           &.fade-out {
             .item-title,
@@ -157,6 +160,54 @@
           .item-description {
             --text-position-offset: 60px;
           }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $tablet) {
+  .slider {
+    .slider-container {
+      flex-direction: row;
+
+      .slider-items {
+        display: block;
+        width: 65%;
+
+        .slider-item {
+          --card-scale-offset: 0.8;
+          --card-rotation-offset: 0;
+          --card-y-offset: 12%;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%) translateX(var(--card-y-offset)) rotateY(var(--card-rotation-offset))
+            scale(var(--card-scale-offset)) translateZ(var(--card-depth-offset));
+          width: 80%;
+
+          &.prev-item {
+            --card-rotation-offset: 25deg;
+            --card-y-offset: -7%;
+          }
+
+          &.next-item {
+            --card-rotation-offset: -25deg;
+            --card-y-offset: 31%;
+          }
+
+          &.current-item {
+            --card-scale-offset: 1;
+            --card-depth-offset: 0;
+            position: relative;
+            opacity: 1;
+          }
+        }
+      }
+
+      .item-texts {
+        .item-text-container {
+          top: 50%;
+          transform: translateY(-50%);
         }
       }
     }
