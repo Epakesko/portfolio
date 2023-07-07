@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import "./Navigation.styles.scss";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -19,13 +19,25 @@ const Navigation = ({ navItems, activeSections }: NavigationProps) => {
   const [opacity, setOpacity] = useState(0);
   const [active, setActive] = useState(false);
   const [activeSection, setActiveSection] = useState<Element>();
-  const ref = React.useRef<HTMLElement>(null);
+  const [scrollToSection, setScrollToSection] = useState<Element>();
+  const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    if (activeSections && (!activeSection || !activeSections.includes(activeSection))) {
-      setActiveSection(activeSections[0]);
-    }
-  }, [activeSection, activeSections]);
+    setActiveSection(activeSection => {
+      if (!scrollToSection) {
+        if (activeSections && (!activeSection || !activeSections.includes(activeSection))) {
+          return activeSections[0];
+        } else {
+          return activeSection;
+        }
+      } else {
+        if (activeSections && activeSections.includes(scrollToSection)) {
+          setScrollToSection(undefined);
+        }
+        return scrollToSection;
+      }
+    });
+  }, [scrollToSection, activeSections]);
 
   useEffect(() => {
     if (ref.current) {
@@ -51,6 +63,7 @@ const Navigation = ({ navItems, activeSections }: NavigationProps) => {
     if (sectionRef.current) {
       sectionRef.current.scrollIntoView({ behavior: "smooth" });
       setActive(false);
+      setScrollToSection(sectionRef.current);
     }
   };
 
