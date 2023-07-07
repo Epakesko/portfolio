@@ -63,65 +63,42 @@ function App() {
       </header>
       <div className="app-body">
         <Banner />
-        <Divider text="About me" ref={aboutMeSectionRef} />
-        <AboutMe />
-        <Divider text="Work" ref={workSectionRef} />
-        <Slider
-          imageSliderOnRight={false}
-          title="MSCI"
-          description="MSCI is a leading financial company. Worked with them for 3 years on various different aspects of their portal."
-          items={[
-            {
-              image: EsgImage,
-              title: "ESG Ratings",
-              description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna justo, lobortis sed urna sed, convallis dictum sapien. Maecenas sit amet porta ligula.",
-            },
-            {
-              image: FacsImage,
-              title: "FaCS Report",
-              description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna justo, lobortis sed urna sed, convallis dictum sapien. Maecenas sit amet porta ligula.",
-            },
-            {
-              image: SerchImage,
-              title: "Dynamic search",
-              description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna justo, lobortis sed urna sed, convallis dictum sapien. Maecenas sit amet porta ligula.",
-            },
-            {
-              image: ResearchForm,
-              title: "Research form",
-              description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna justo, lobortis sed urna sed, convallis dictum sapien. Maecenas sit amet porta ligula.",
-            },
-          ]}
-        />
-        <Slider
-          imageSliderOnRight={true}
-          title="KBC"
-          description="KBC was an irish bank, but sadly they were purchages by Bank of Ireland and the website was discontinued."
-          items={[
-            {
-              image: Fragments,
-              title: "Responsive elements",
-              description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna justo, lobortis sed urna sed, convallis dictum sapien. Maecenas sit amet porta ligula.",
-            },
-            {
-              image: LTV,
-              title: "Calculators",
-              description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna justo, lobortis sed urna sed, convallis dictum sapien. Maecenas sit amet porta ligula.",
-            },
-            {
-              image: Mortgage,
-              title: "Calculators",
-              description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna justo, lobortis sed urna sed, convallis dictum sapien. Maecenas sit amet porta ligula.",
-            },
-          ]}
-        />
+        <Divider text="About me" ref={aboutMeSectionRef}>
+          <AboutMe />
+        </Divider>
+        <Divider text="Work" ref={workSectionRef}>
+          <Slider
+            imageSliderOnRight={false}
+            title="MSCI"
+            description="MSCI is a leading financial company. Worked with them for 3 years on various different aspects of their portal."
+            items={[
+              {
+                image: EsgImage,
+                title: "ESG Ratings",
+                description:
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna justo, lobortis sed urna sed, convallis dictum sapien. Maecenas sit amet porta ligula.",
+              },
+              {
+                image: FacsImage,
+                title: "FaCS Report",
+                description:
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna justo, lobortis sed urna sed, convallis dictum sapien. Maecenas sit amet porta ligula.",
+              },
+              {
+                image: SerchImage,
+                title: "Dynamic search",
+                description:
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna justo, lobortis sed urna sed, convallis dictum sapien. Maecenas sit amet porta ligula.",
+              },
+              {
+                image: ResearchForm,
+                title: "Research form",
+                description:
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna justo, lobortis sed urna sed, convallis dictum sapien. Maecenas sit amet porta ligula.",
+              },
+            ]}
+          />
+        </Divider>
       </div>
       <Footer ref={footerRef} />
     </div>
