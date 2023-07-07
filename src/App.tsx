@@ -19,11 +19,11 @@ function App() {
   const workSectionRef = useRef<HTMLDivElement>(null);
   const projectsSectionRef = useRef<HTMLDivElement>(null);
   const footerRef = useRef<HTMLDivElement>(null);
-  const [activeSections, setActiveSection] = useState<Element[] | undefined>([]);
+  const [activeSections, setActiveSections] = useState<Element[] | undefined>([]);
 
   const handleIntersection = (entries: IntersectionObserverEntry[]) => {
     entries.forEach(entry => {
-      setActiveSection(activeSections => {
+      setActiveSections(activeSections => {
         const newSections = new Set(activeSections);
         if (entry.isIntersecting) {
           newSections.add(entry.target);
@@ -93,6 +93,31 @@ function App() {
               {
                 image: ResearchForm,
                 title: "Research form",
+                description:
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna justo, lobortis sed urna sed, convallis dictum sapien. Maecenas sit amet porta ligula.",
+              },
+            ]}
+          />
+          <Slider
+            imageSliderOnRight={true}
+            title="KBC"
+            description="KBC was an irish bank, but sadly they were purchages by Bank of Ireland and the website was discontinued."
+            items={[
+              {
+                image: Fragments,
+                title: "Responsive elements",
+                description:
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna justo, lobortis sed urna sed, convallis dictum sapien. Maecenas sit amet porta ligula.",
+              },
+              {
+                image: LTV,
+                title: "Calculators",
+                description:
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna justo, lobortis sed urna sed, convallis dictum sapien. Maecenas sit amet porta ligula.",
+              },
+              {
+                image: Mortgage,
+                title: "Calculators",
                 description:
                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna justo, lobortis sed urna sed, convallis dictum sapien. Maecenas sit amet porta ligula.",
               },
