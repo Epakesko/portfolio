@@ -12,12 +12,20 @@ type NavItemProps = {
 
 type NavigationProps = {
   navItems: NavItemProps[];
+  activeSections: Element[] | undefined;
 };
 
-const Navigation = ({ navItems }: NavigationProps) => {
+const Navigation = ({ navItems, activeSections }: NavigationProps) => {
   const [opacity, setOpacity] = useState(0);
   const [active, setActive] = useState(false);
+  const [activeSection, setActiveSection] = useState<Element>();
   const ref = React.useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (activeSections && (!activeSection || !activeSections.includes(activeSection))) {
+      setActiveSection(activeSections[0]);
+    }
+  }, [activeSection, activeSections]);
 
   useEffect(() => {
     if (ref.current) {
@@ -55,11 +63,17 @@ const Navigation = ({ navItems }: NavigationProps) => {
         onClick={() => setActive(active => !active)}
       />
       <ul className="navigation-items">
-        {navItems.map((item, i) => (
-          <div key={i} className="navigation-item" onClick={() => item.sectionRef && handleClick(item.sectionRef)}>
-            {item.text}
-          </div>
-        ))}
+        {navItems.map((item, i) => {
+          return (
+            <div
+              key={i}
+              className={`navigation-item ${item.sectionRef?.current === activeSection ? "active" : ""}`}
+              onClick={() => item.sectionRef && handleClick(item.sectionRef)}
+            >
+              {item.text}
+            </div>
+          );
+        })}
       </ul>
     </nav>
   );

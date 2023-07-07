@@ -12,12 +12,41 @@ import ResearchForm from "./media/msci/research-form.png";
 import Fragments from "./media/kbc/fragments.png";
 import LTV from "./media/kbc/ltv_calculator.png";
 import Mortgage from "./media/kbc/mortgage_calculator.png";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function App() {
   const aboutMeSectionRef = useRef<HTMLDivElement>(null);
   const workSectionRef = useRef<HTMLDivElement>(null);
+  const projectsSectionRef = useRef<HTMLDivElement>(null);
   const footerRef = useRef<HTMLDivElement>(null);
+  const [activeSections, setActiveSection] = useState<Element[] | undefined>([]);
+
+  const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+    entries.forEach(entry => {
+      setActiveSection(activeSections => {
+        const newSections = new Set(activeSections);
+        if (entry.isIntersecting) {
+          newSections.add(entry.target);
+        } else {
+          newSections.delete(entry.target);
+        }
+        return Array.from(newSections);
+      });
+    });
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(handleIntersection);
+
+    if (aboutMeSectionRef.current) observer.observe(aboutMeSectionRef.current);
+    if (workSectionRef.current) observer.observe(workSectionRef.current);
+    if (projectsSectionRef.current) observer.observe(projectsSectionRef.current);
+    if (footerRef.current) observer.observe(footerRef.current);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   return (
     <div className="app-container" onScroll={event => console.log(event)}>
@@ -26,10 +55,10 @@ function App() {
           navItems={[
             { text: "About me", sectionRef: aboutMeSectionRef },
             { text: "Work", sectionRef: workSectionRef },
-            { text: "Projects" },
-            { text: "Contact" },
+            { text: "Projects", sectionRef: projectsSectionRef },
             { text: "Contact", sectionRef: footerRef },
           ]}
+          activeSections={activeSections}
         />
       </header>
       <div className="app-body">
