@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.99d23ab7.css",
-    "main.js": "/static/js/main.7bae2064.js",
+    "main.css": "/static/css/main.acc6775d.css",
+    "main.js": "/static/js/main.ce67f0a5.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/fragments.png": "/static/media/fragments.449a80963e3b0744d454.png",
+    "static/media/CV.pdf": "/static/media/CV.950fc08864cd5be2a3c6.pdf",
     "static/media/esg.png": "/static/media/esg.6dd7b32c3b948598c386.png",
     "static/media/ltv_calculator.png": "/static/media/ltv_calculator.db9ce0b644b6464f6ed3.png",
     "static/media/search.png": "/static/media/search.5ad9641eb559f92068a7.png",
@@ -18,12 +19,12 @@
     "static/media/sen-regular.woff2": "/static/media/sen-regular.8c00ec432771ee7d9499.woff2",
     "static/media/manrope-thin.woff2": "/static/media/manrope-thin.de406e55c1428924d2c1.woff2",
     "index.html": "/index.html",
-    "main.99d23ab7.css.map": "/static/css/main.99d23ab7.css.map",
-    "main.7bae2064.js.map": "/static/js/main.7bae2064.js.map",
+    "main.acc6775d.css.map": "/static/css/main.acc6775d.css.map",
+    "main.ce67f0a5.js.map": "/static/js/main.ce67f0a5.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.99d23ab7.css",
-    "static/js/main.7bae2064.js"
+    "static/css/main.acc6775d.css",
+    "static/js/main.ce67f0a5.js"
   ]
 }
