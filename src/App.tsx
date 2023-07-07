@@ -4,6 +4,7 @@ import AboutMe from "./components/about_me/AboutMe.component";
 import Navigation from "./components/navigation/Navigation.component";
 import Slider from "./components/slider/Slider.component";
 import Divider from "./components/divider/Divider.component";
+import Footer from "./components/footer/Footer.component";
 import EsgImage from "./media/msci/esg.png";
 import FacsImage from "./media/msci/facs.png";
 import SerchImage from "./media/msci/search.png";
@@ -16,6 +17,7 @@ import { useRef } from "react";
 function App() {
   const aboutMeSectionRef = useRef<HTMLDivElement>(null);
   const workSectionRef = useRef<HTMLDivElement>(null);
+  const footerRef = useRef<HTMLDivElement>(null);
 
   return (
     <div className="app-container" onScroll={event => console.log(event)}>
@@ -26,6 +28,7 @@ function App() {
             { text: "Work", sectionRef: workSectionRef },
             { text: "Projects" },
             { text: "Contact" },
+            { text: "Contact", sectionRef: footerRef },
           ]}
         />
       </header>
@@ -91,6 +94,7 @@ function App() {
           ]}
         />
       </div>
+      <Footer ref={footerRef} />
     </div>
   );
 }

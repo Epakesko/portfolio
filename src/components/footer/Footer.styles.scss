@@ -1,0 +1,63 @@
+@use "../../styles/variables.scss" as *;
+
+.footer {
+  box-sizing: border-box;
+  border-top: 2px solid black;
+  background-color: $midnight-blue;
+  padding: 18px;
+  width: 100%;
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    text-align: justify;
+
+    .contact {
+      display: flex;
+      gap: 18px;
+
+      a {
+        color: $light-parchment;
+      }
+    }
+
+    .copyright {
+      color: $light-grey;
+      font-size: 14px;
+    }
+
+    .disclaimer {
+      font-size: 14px;
+    }
+  }
+}
+
+@media only screen and (min-width: $tablet) {
+  .footer {
+    .footer-content {
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin: auto;
+      max-width: 1400px;
+
+      .contact {
+        flex: 0 0 45%;
+        justify-content: center;
+        gap: 27px;
+      }
+
+      .copyright {
+        flex: 0 0 45%;
+        text-align: center;
+      }
+
+      .disclaimer {
+        flex: 0 0 100%;
+        text-align: center;
+      }
+    }
+  }
+}
