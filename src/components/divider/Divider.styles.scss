@@ -30,9 +30,12 @@
 }
 
 @media only screen and (min-width: $tablet) {
+  .section-container {
+    scroll-margin-top: 120px;
+  }
+
   .divider {
     justify-content: flex-start;
-    scroll-margin-top: 120px;
 
     &::after {
       --gradient-direction: to left;

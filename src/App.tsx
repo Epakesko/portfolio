@@ -53,7 +53,7 @@ function App() {
       <header className="app-header">
         <Navigation
           navItems={[
-            { text: "About me", sectionRef: aboutMeSectionRef },
+            { text: "About", sectionRef: aboutMeSectionRef },
             { text: "Work", sectionRef: workSectionRef },
             { text: "Projects", sectionRef: projectsSectionRef },
             { text: "Contact", sectionRef: footerRef },
@@ -63,7 +63,7 @@ function App() {
       </header>
       <div className="app-body">
         <Banner />
-        <Divider text="About me" ref={aboutMeSectionRef}>
+        <Divider text="About" ref={aboutMeSectionRef}>
           <AboutMe />
         </Divider>
         <Divider text="Work" ref={workSectionRef}>

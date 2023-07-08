@@ -1,4 +1,4 @@
-import { Children, forwardRef } from "react";
+import { forwardRef } from "react";
 import "./Divider.styles.scss";
 
 type DividerProps = {
@@ -8,7 +8,7 @@ type DividerProps = {
 
 const Divider = forwardRef<HTMLDivElement, DividerProps>(({ text, children }, ref) => {
   return (
-    <div ref={ref}>
+    <div ref={ref} className="section-container">
       <div className="divider">{text}</div>
       {children}
     </div>
