@@ -1,0 +1,53 @@
+@use "../../styles/variables.scss" as *;
+
+.experience-container {
+  margin-bottom: 18px;
+
+  .company {
+    .company-name {
+      display: inline-block;
+      margin-bottom: 6px;
+      border-bottom: 2px solid $light-parchment;
+      text-transform: uppercase;
+    }
+
+    .company-timespan {
+      display: block;
+      margin-bottom: 6px;
+      color: $light-grey;
+      font-size: 15px;
+    }
+
+    .relevant-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-bottom: 12px;
+
+      .skill {
+        border-radius: 6px;
+        background-color: rgba($midnight-purple, 0.6);
+        padding: 6px;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $tablet) {
+  .experience-container {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 0;
+
+    .company {
+      order: 2;
+      width: 40%;
+    }
+
+    .experience {
+      order: 1;
+      width: 60%;
+    }
+  }
+}

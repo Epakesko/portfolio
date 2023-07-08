@@ -12,32 +12,37 @@
   .about-me-image {
     display: flex;
     position: relative;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 
     img {
       border-radius: 9px;
-      width: 80%;
+      width: 90%;
       max-width: 360px;
     }
   }
 
-  .about-me-text {
-    font-size: 18px;
+  .about-me {
+    font-size: 16px;
     text-align: justify;
+
+    .about-me-text {
+      margin-bottom: 18px;
+    }
   }
 }
 
-@media only screen and (min-width: $tablet) {
+@media only screen and (min-width: $desktop) {
   .about-me-container {
     flex-direction: row;
+    align-items: flex-start;
 
     .about-me-image {
-      width: 31%;
+      width: 33%;
     }
 
-    .about-me-text {
-      max-width: 62%;
+    .about-me {
+      max-width: 65%;
     }
   }
 }
