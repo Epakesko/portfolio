@@ -38,7 +38,7 @@
 
     .typed-name {
       opacity: 0;
-      animation: 2s linear 4s fadeInAnimation;
+      animation: 2s linear 3.5s fadeInAnimation;
       animation-fill-mode: forwards;
     }
 
@@ -49,7 +49,7 @@
 
   .bottom-line {
     opacity: 0;
-    animation: 2.5s linear 5s fadeInAnimation;
+    animation: 2.5s linear 4.8s fadeInAnimation;
     animation-fill-mode: forwards;
   }
 }
@@ -87,6 +87,10 @@
       .handwritten-name {
         fill: $light-parchment;
         display: block;
+
+        opacity: 0;
+        animation: 0s linear 3s fadeInAnimation;
+        animation-fill-mode: forwards;
         margin: auto;
 
         .mask {
