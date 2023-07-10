@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.acc6775d.css",
-    "main.js": "/static/js/main.ce67f0a5.js",
+    "main.css": "/static/css/main.125398c0.css",
+    "main.js": "/static/js/main.af7b6425.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/fragments.png": "/static/media/fragments.449a80963e3b0744d454.png",
     "static/media/CV.pdf": "/static/media/CV.950fc08864cd5be2a3c6.pdf",
@@ -16,15 +16,16 @@
     "static/media/manrope-medium.woff2": "/static/media/manrope-medium.02fde8ae851aacf5c6a9.woff2",
     "static/media/manrope-regular.woff2": "/static/media/manrope-regular.02fde8ae851aacf5c6a9.woff2",
     "static/media/manrope-semibold.woff2": "/static/media/manrope-semibold.02fde8ae851aacf5c6a9.woff2",
+    "static/media/parisienne.woff2": "/static/media/parisienne.823326c4837a3153093f.woff2",
     "static/media/sen-regular.woff2": "/static/media/sen-regular.8c00ec432771ee7d9499.woff2",
     "static/media/manrope-thin.woff2": "/static/media/manrope-thin.de406e55c1428924d2c1.woff2",
     "index.html": "/index.html",
-    "main.acc6775d.css.map": "/static/css/main.acc6775d.css.map",
-    "main.ce67f0a5.js.map": "/static/js/main.ce67f0a5.js.map",
+    "main.125398c0.css.map": "/static/css/main.125398c0.css.map",
+    "main.af7b6425.js.map": "/static/js/main.af7b6425.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.acc6775d.css",
-    "static/js/main.ce67f0a5.js"
+    "static/css/main.125398c0.css",
+    "static/js/main.af7b6425.js"
   ]
 }
