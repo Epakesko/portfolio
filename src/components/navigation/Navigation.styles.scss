@@ -39,12 +39,12 @@
       }
 
       &:hover {
-        color: $light-gold;
+        color: $peach;
 
         &::after {
           transform: scale(1);
           opacity: 100%;
-          background-color: $light-gold;
+          background-color: $peach;
         }
       }
     }

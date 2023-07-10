@@ -1,42 +1,50 @@
 @font-face {
-  font-family: "Manrope";
   font-style: normal;
   font-weight: 200;
   src: url(../fonts/manrope-thin.woff2) format("woff2");
+  font-family: "Manrope";
 }
 
 @font-face {
-  font-family: "Manrope";
   font-style: normal;
   font-weight: 400;
   src: url(../fonts/manrope-regular.woff2) format("woff2");
+  font-family: "Manrope";
 }
 
 @font-face {
-  font-family: "Manrope";
   font-style: normal;
   font-weight: 500;
   src: url(../fonts/manrope-medium.woff2) format("woff2");
+  font-family: "Manrope";
 }
 
 @font-face {
-  font-family: "Manrope";
   font-style: normal;
   font-weight: 600;
   src: url(../fonts/manrope-semibold.woff2) format("woff2");
+  font-family: "Manrope";
 }
 
 @font-face {
-  font-family: "Manrope";
   font-style: normal;
   font-weight: 700;
   src: url(../fonts/manrope-bold.woff2) format("woff2");
+  font-family: "Manrope";
 }
 
 @font-face {
-  font-family: "Sen";
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
   src: url(../fonts/sen-regular.woff2) format("woff2");
+  font-family: "Sen";
+  font-display: swap;
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/parisienne.woff2) format("woff2");
+  font-family: "Parisienne";
+  font-display: swap;
 }
