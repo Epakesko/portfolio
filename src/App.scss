@@ -4,45 +4,16 @@
   width: 100%;
 }
 
-@property --background-rotation {
-  syntax: "<angle>";
-  initial-value: 155deg;
-  inherits: false;
-}
-
 .app-container {
+  --background-rotation: 155deg;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  //animation: AnimateBG 60s linear infinite;
   background: linear-gradient(var(--background-rotation), $sky-red 0%, $midnight-blue 90%);
   background-position: 50%;
   background-size: 200%;
   min-height: 100vh;
-}
-
-@keyframes AnimateBG {
-  0% {
-    --background-rotation: -45deg;
-    background-position: 0;
-  }
-  25% {
-    --background-rotation: 45deg;
-    background-position: 50%;
-  }
-  50% {
-    --background-rotation: 135deg;
-    background-position: 100%;
-  }
-  75% {
-    --background-rotation: 225deg;
-    background-position: 50%;
-  }
-  100% {
-    --background-rotation: 315deg;
-    background-position: 0;
-  }
 }
 
 .app-body {
