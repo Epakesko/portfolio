@@ -36,11 +36,13 @@
       .slider-item {
         --card-y-offset: 0;
         --card-depth-offset: -200px;
+        --card-opacity-delay: 0.29s;
         position: absolute;
         transform: translateX(var(--card-y-offset)) translateZ(var(--card-depth-offset));
         opacity: 0;
         z-index: 1;
-        transition: all 0.7s cubic-bezier(0.65, 0.05, 0.36, 1);
+        transition: transform 0.7s cubic-bezier(0.65, 0.05, 0.36, 1), opacity 0.2s linear var(--card-opacity-delay),
+          z-index 0s linear 0.33s;
         border: 2px solid $midnight-blue;
         background-position: center;
         background-size: cover;
@@ -50,6 +52,7 @@
 
         &.prev-item,
         &.next-item {
+          --card-opacity-delay: 0.35s;
           --card-depth-offset: -100px;
           opacity: 0.6;
         }
