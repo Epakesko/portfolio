@@ -17,7 +17,6 @@ import { useEffect, useRef, useState } from "react";
 function App() {
   const aboutMeSectionRef = useRef<HTMLDivElement>(null);
   const workSectionRef = useRef<HTMLDivElement>(null);
-  const projectsSectionRef = useRef<HTMLDivElement>(null);
   const footerRef = useRef<HTMLDivElement>(null);
   const [activeSections, setActiveSections] = useState<Element[] | undefined>([]);
 
@@ -40,7 +39,6 @@ function App() {
 
     if (aboutMeSectionRef.current) observer.observe(aboutMeSectionRef.current);
     if (workSectionRef.current) observer.observe(workSectionRef.current);
-    if (projectsSectionRef.current) observer.observe(projectsSectionRef.current);
     if (footerRef.current) observer.observe(footerRef.current);
 
     return () => {
@@ -55,7 +53,6 @@ function App() {
           navItems={[
             { text: "About", sectionRef: aboutMeSectionRef },
             { text: "Work", sectionRef: workSectionRef },
-            { text: "Projects", sectionRef: projectsSectionRef },
             { text: "Contact", sectionRef: footerRef },
           ]}
           activeSections={activeSections}
