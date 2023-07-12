@@ -1,14 +1,15 @@
+import { ReactNode } from "react";
 import useReveal from "../../hooks/useReveal";
 import "./Experience.styles.scss";
 
 type ExperienceProps = {
-  experience: string;
   companyName: string;
   timespan: string;
   skills: string[];
+  children: ReactNode;
 };
 
-const Experience = ({ experience, companyName, timespan, skills }: ExperienceProps) => {
+const Experience = ({ companyName, timespan, skills, children }: ExperienceProps) => {
   const [revealed, experienceRef] = useReveal<HTMLDivElement>();
 
   return (
@@ -24,7 +25,7 @@ const Experience = ({ experience, companyName, timespan, skills }: ExperiencePro
           ))}
         </div>
       </div>
-      <div className="experience">{experience}</div>
+      <div className="experience">{children}</div>
     </div>
   );
 };
