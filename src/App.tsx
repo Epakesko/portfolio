@@ -65,7 +65,7 @@ function App() {
         </Divider>
         <Divider text="Work" ref={workSectionRef}>
           <Slider
-            imageSliderOnRight={false}
+            imageSliderOnRight={true}
             title="MSCI"
             description="MSCI is a leading financial company. Worked with them for 3 years on various different aspects of their portal."
             items={[
@@ -96,7 +96,7 @@ function App() {
             ]}
           />
           <Slider
-            imageSliderOnRight={true}
+            imageSliderOnRight={false}
             title="KBC"
             description="KBC was an irish bank, but sadly they were purchages by Bank of Ireland and the website was discontinued."
             items={[

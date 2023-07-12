@@ -1,3 +1,4 @@
+import useReveal from "../../hooks/useReveal";
 import "./Experience.styles.scss";
 
 type ExperienceProps = {
@@ -8,14 +9,18 @@ type ExperienceProps = {
 };
 
 const Experience = ({ experience, companyName, timespan, skills }: ExperienceProps) => {
+  const [revealed, experienceRef] = useReveal<HTMLDivElement>();
+
   return (
-    <div className="experience-container">
+    <div ref={experienceRef} className={`experience-container ${revealed ? "" : "hidden"}`}>
       <div className="company">
         <div className="company-name">{companyName}</div>
         <div className="company-timespan">{timespan}</div>
         <div className="relevant-skills">
-          {skills.map(skill => (
-            <div className="skill">{skill}</div>
+          {skills.map((skill, i) => (
+            <div key={i} className="skill">
+              {skill}
+            </div>
           ))}
         </div>
       </div>

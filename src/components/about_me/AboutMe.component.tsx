@@ -1,15 +1,19 @@
 import "./AboutMe.styles.scss";
 import ProfilePicture from "../../media/profile_picture.png";
 import Experience from "../experience/Experience.component";
+import useReveal from "../../hooks/useReveal";
 
 const AboutMe = () => {
+  const [imageRevealed, imageRef] = useReveal<HTMLDivElement>();
+  const [aboutMeTextRevealed, aboutMeTextRef] = useReveal<HTMLDivElement>();
+
   return (
     <div className="about-me-container">
-      <div className="about-me-image">
+      <div ref={imageRef} className={`about-me-image ${imageRevealed ? "" : "hidden"}`}>
         <img src={ProfilePicture} alt="" />
       </div>
       <div className="about-me">
-        <div className="about-me-text">
+        <div ref={aboutMeTextRef} className={`about-me-text ${aboutMeTextRevealed ? "" : "hidden"}`}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna justo, lobortis sed urna sed,
           convallis dictum sapien. Maecenas sit amet porta ligula. Sed eros justo, ornare non tortor non, lacinia
           elementum augue. Etiam sit amet fermentum odio. In finibus odio quis urna commodo luctus. Lorem ipsum dolor

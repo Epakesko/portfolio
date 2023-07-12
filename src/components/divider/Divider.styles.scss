@@ -5,14 +5,27 @@
   justify-content: center;
   align-items: center;
   gap: 9px;
+  opacity: 1;
+  transition: $fadeIn;
   margin: 36px auto;
   font-size: 18px;
   text-transform: uppercase;
+
+  &.hidden {
+    opacity: 0;
+    &::before,
+    &::after {
+      opacity: 0;
+      width: 0px;
+    }
+  }
 
   &::before,
   &::after {
     --gradient-direction: 0;
     display: block;
+    opacity: 1;
+    transition: $fadeIn;
     background: linear-gradient(var(--gradient-direction), rgba(240, 240, 240, 0), #fff);
     height: 1px;
     content: "";
@@ -36,6 +49,11 @@
 
   .divider {
     justify-content: flex-start;
+    margin: 36px 0;
+
+    &.hidden {
+      margin-left: 90px;
+    }
 
     &::after {
       --gradient-direction: to left;

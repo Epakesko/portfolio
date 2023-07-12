@@ -1,9 +1,30 @@
-@use "../../styles/variables.scss" as *;
+@use "../../styles/_variables.scss" as *;
 
 .experience-container {
   margin-bottom: 18px;
 
+  &.hidden {
+    .experience {
+      transform: translateY(40px);
+      opacity: 0;
+    }
+
+    .company {
+      transform: translateX(40px);
+      opacity: 0;
+    }
+  }
+
+  .experience {
+    opacity: 1;
+    transition: $fadeIn;
+    margin-bottom: 12px;
+  }
+
   .company {
+    opacity: 1;
+    transition: $fadeIn;
+
     .company-name {
       display: inline-block;
       margin-bottom: 6px;

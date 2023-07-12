@@ -5,7 +5,14 @@
   width: 100%;
 
   .slider-texts {
+    opacity: 1;
+    transition: $fadeIn;
     margin-bottom: 36px;
+
+    &.hidden {
+      transform: translateY(40px);
+      opacity: 0;
+    }
 
     &.right-aligned-texts {
       text-align: right;
@@ -32,6 +39,14 @@
       justify-content: center;
       gap: 18px;
       perspective: 1000px;
+      opacity: 1;
+      transition: $fadeIn;
+      margin-bottom: 36px;
+
+      &.hidden {
+        transform: translateY(40px);
+        opacity: 0;
+      }
 
       .slider-item {
         --card-y-offset: 0;
@@ -83,6 +98,14 @@
       position: relative;
       flex: 1;
       order: 2;
+      opacity: 1;
+      transition: $fadeIn;
+      margin-bottom: 36px;
+
+      &.hidden {
+        transform: translateY(40px);
+        opacity: 0;
+      }
 
       .item-text-container {
         display: none;
@@ -148,6 +171,14 @@
         display: block;
         width: 65%;
 
+        &.hidden {
+          transform: translateX(-40px);
+
+          &.right-aligned {
+            transform: translateX(40px);
+          }
+        }
+
         .slider-item {
           --card-scale-offset: 0.8;
           --card-rotation-offset: 0;
@@ -212,6 +243,14 @@
 
       .item-texts {
         order: unset;
+
+        &.hidden {
+          transform: translateX(-40px);
+
+          &.right-aligned {
+            transform: translateX(40px);
+          }
+        }
 
         &.right-aligned {
           order: 2;

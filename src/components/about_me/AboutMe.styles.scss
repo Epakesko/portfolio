@@ -14,6 +14,14 @@
     position: relative;
     justify-content: center;
     align-items: center;
+    opacity: 1;
+    transition: $fadeIn;
+    transition-delay: 0.3s;
+
+    &.hidden {
+      transform: translateY(40px);
+      opacity: 0;
+    }
 
     img {
       border: 2px solid $midnight-blue;
@@ -27,7 +35,14 @@
     text-align: justify;
 
     .about-me-text {
+      opacity: 1;
+      transition: $fadeIn;
       margin-bottom: 18px;
+
+      &.hidden {
+        transform: translateY(40px);
+        opacity: 0;
+      }
     }
   }
 }

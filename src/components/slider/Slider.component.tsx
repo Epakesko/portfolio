@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Slider.styles.scss";
+import useReveal from "../../hooks/useReveal";
 
 type SliderItem = {
   image: string;
@@ -15,6 +16,7 @@ type SliderProps = {
 };
 
 type ImageSliderProps = {
+  className: string;
   handleSlide: (forward: boolean) => void;
   items: SliderItem[];
   transitioning: boolean;
@@ -28,7 +30,9 @@ type TextSliderProps = {
   startIndex: number;
 };
 
-const ImageSlider = ({ handleSlide, items, transitioning, startIndex }: ImageSliderProps) => {
+const ImageSlider = ({ className, handleSlide, items, transitioning, startIndex }: ImageSliderProps) => {
+  const [revealed, imageSliderRef] = useReveal<HTMLDivElement>();
+
   const [touchPosition, setTouchPosition] = useState<number | null>(null);
 
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -58,7 +62,12 @@ const ImageSlider = ({ handleSlide, items, transitioning, startIndex }: ImageSli
   };
 
   return (
-    <div className="slider-items" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+    <div
+      ref={imageSliderRef}
+      className={`slider-items ${className} ${revealed ? "" : "hidden"}`}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
       <button className="slide-back" onClick={() => handleSlide(false)} disabled={transitioning} />
       {items.map((item, i) => (
         <img
@@ -82,8 +91,10 @@ const ImageSlider = ({ handleSlide, items, transitioning, startIndex }: ImageSli
 };
 
 const TextSlider = ({ className, items, transitioning, startIndex }: TextSliderProps) => {
+  const [revealed, textSliderRef] = useReveal<HTMLDivElement>();
+
   return (
-    <div className={`item-texts ${className}`}>
+    <div ref={textSliderRef} className={`item-texts ${className} ${revealed ? "" : "hidden"}`}>
       {items.map((item, i) => (
         <div
           key={i}
@@ -109,6 +120,7 @@ const Slider = ({ title, description, items, imageSliderOnRight = false }: Slide
   const [startIndex, setStartIndex] = useState(0);
   const [textStartIndex, setTextStartIndex] = useState(0);
   const [transitioning, isTransitioning] = useState(false);
+  const [revealed, sliderTextsRef] = useReveal<HTMLDivElement>();
 
   const slide = (forward: boolean) => {
     isTransitioning(true);
@@ -121,18 +133,27 @@ const Slider = ({ title, description, items, imageSliderOnRight = false }: Slide
 
   return (
     <div className="slider">
-      <div className={`slider-texts ${imageSliderOnRight ? "right-aligned-texts" : ""}`}>
+      <div
+        ref={sliderTextsRef}
+        className={`slider-texts ${imageSliderOnRight ? "" : "right-aligned-texts"} ${revealed ? "" : "hidden"}`}
+      >
         <div className="slider-title">{title}</div>
         <div className="slider-subtitle">{description}</div>
       </div>
       <div className="slider-container">
         <TextSlider
-          className={`${imageSliderOnRight ? "right-aligned" : ""}`}
+          className={`${imageSliderOnRight ? "" : "right-aligned"}`}
           items={items}
           transitioning={transitioning}
           startIndex={textStartIndex}
         />
-        <ImageSlider handleSlide={slide} items={items} transitioning={transitioning} startIndex={startIndex} />
+        <ImageSlider
+          className={`${imageSliderOnRight ? "right-aligned" : ""}`}
+          handleSlide={slide}
+          items={items}
+          transitioning={transitioning}
+          startIndex={startIndex}
+        />
       </div>
     </div>
   );
