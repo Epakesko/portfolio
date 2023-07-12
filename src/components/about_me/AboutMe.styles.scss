@@ -12,7 +12,7 @@
   .about-me-image {
     display: flex;
     position: relative;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
 
     img {
@@ -38,6 +38,7 @@
     align-items: flex-start;
 
     .about-me-image {
+      justify-content: flex-start;
       width: 33%;
     }
 

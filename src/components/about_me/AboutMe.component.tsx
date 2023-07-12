@@ -1,5 +1,5 @@
 import "./AboutMe.styles.scss";
-import ProfilePicture from "../../media/profile-picture.jpg";
+import ProfilePicture from "../../media/profile_picture.png";
 import Experience from "../experience/Experience.component";
 
 const AboutMe = () => {
