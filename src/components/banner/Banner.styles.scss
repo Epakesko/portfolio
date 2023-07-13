@@ -21,13 +21,13 @@
   .top-line {
     .hi {
       opacity: 0;
-      animation: 1.5s linear 1s fadeInAnimation;
+      animation: 1.2s linear 0.8s fadeInAnimation;
       animation-fill-mode: forwards;
     }
 
     .my-name-is {
       opacity: 0;
-      animation: 1.8s linear 2.6s fadeInAnimation;
+      animation: 1.2s linear 2.2s fadeInAnimation;
       animation-fill-mode: forwards;
     }
   }
@@ -38,7 +38,7 @@
 
     .typed-name {
       opacity: 0;
-      animation: 2s linear 3.5s fadeInAnimation;
+      animation: 2s linear 3.2s fadeInAnimation;
       animation-fill-mode: forwards;
     }
 
@@ -49,7 +49,7 @@
 
   .bottom-line {
     opacity: 0;
-    animation: 2.5s linear 4.8s fadeInAnimation;
+    animation: 2s linear 4.5s fadeInAnimation;
     animation-fill-mode: forwards;
   }
 }
@@ -72,6 +72,7 @@
     }
 
     .bottom-line {
+      animation-delay: 5.5s;
       font-size: 36px;
       text-align: right;
     }
@@ -109,86 +110,86 @@
       }
 
       #mask-B {
-        --animation-length: 0.5s;
+        --animation-length: 0.4s;
         --animation-delay: 3s;
         --translate-x: -5px;
         --translate-y: 0px;
       }
       #mask-e {
-        --animation-length: 0.2s;
-        --animation-delay: 3.5s;
+        --animation-length: 0.16s;
+        --animation-delay: 3.4s;
         --translate-x: 118px;
         --translate-y: 44px;
       }
       #mask-n {
-        --animation-length: 0.2s;
-        --animation-delay: 3.7s;
+        --animation-length: 0.16s;
+        --animation-delay: 3.56s;
         --translate-x: 165px;
         --translate-y: 44px;
       }
       #mask-d {
-        --animation-length: 0.3s;
-        --animation-delay: 3.9s;
+        --animation-length: 0.24s;
+        --animation-delay: 3.72s;
         --translate-x: 219px;
         --translate-y: 5px;
       }
       #mask-e-2 {
-        --animation-length: 0.2s;
-        --animation-delay: 4.2s;
+        --animation-length: 0.16s;
+        --animation-delay: 3.96s;
         --translate-x: 283px;
         --translate-y: 44px;
       }
       #mask-g {
-        --animation-length: 0.4s;
-        --animation-delay: 4.4s;
+        --animation-length: 0.32s;
+        --animation-delay: 4.12s;
         --translate-x: 312px;
         --translate-y: 44px;
       }
       #mask-u {
-        --animation-length: 0.2s;
-        --animation-delay: 4.8s;
+        --animation-length: 0.24s;
+        --animation-delay: 4.44s;
         --translate-x: 369px;
         --translate-y: 22px;
       }
       #mask-z {
-        --animation-length: 0.2s;
-        --animation-delay: 5s;
+        --animation-length: 0.16s;
+        --animation-delay: 4.68s;
         --translate-x: 411px;
         --translate-y: 47px;
       }
       #mask-T {
-        --animation-length: 0.4s;
-        --animation-delay: 5.4s;
+        --animation-length: 0.36s;
+        --animation-delay: 5.04s;
         --translate-x: 525px;
         --translate-y: -2px;
       }
       #mask-a {
-        --animation-length: 0.2s;
-        --animation-delay: 5.8s;
+        --animation-length: 0.16s;
+        --animation-delay: 5.4s;
         --translate-x: 611px;
         --translate-y: 47px;
       }
       #mask-k {
-        --animation-length: 0.45s;
-        --animation-delay: 6s;
+        --animation-length: 0.36s;
+        --animation-delay: 5.56s;
         --translate-x: 660px;
         --translate-y: 0px;
       }
       #mask-aa {
-        --animation-length: 0.35s;
-        --animation-delay: 6.45s;
+        --animation-length: 0.28s;
+        --animation-delay: 5.92s;
         --translate-x: 708px;
         --translate-y: 23px;
       }
       #mask-c {
-        --animation-length: 0.2s;
-        --animation-delay: 6.8s;
+        --animation-length: 0.16s;
+        --animation-delay: 6.2s;
         --translate-x: 767px;
         --translate-y: 38px;
       }
       #mask-s {
-        --animation-length: 0.2s;
-        --animation-delay: 7s;
+        --animation-length: 0.16s;
+        --animation-delay: 6.36s;
         --translate-x: 806px;
         --translate-y: 36px;
       }
