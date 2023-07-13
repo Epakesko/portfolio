@@ -13,6 +13,7 @@ import Fragments from "./media/kbc/fragments.png";
 import LTV from "./media/kbc/ltv_calculator.png";
 import Mortgage from "./media/kbc/mortgage_calculator.png";
 import { useEffect, useRef, useState } from "react";
+import Link from "./components/common/Link.component";
 
 function App() {
   const aboutMeSectionRef = useRef<HTMLDivElement>(null);
@@ -67,59 +68,66 @@ function App() {
           <Slider
             imageSliderOnRight={true}
             title="MSCI"
-            description="MSCI is a leading financial company. Worked with them for 3 years on various different aspects of their portal."
             items={[
               {
                 image: EsgImage,
                 title: "ESG Ratings",
                 description:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna justo, lobortis sed urna sed, convallis dictum sapien. Maecenas sit amet porta ligula.",
+                  "Implemented data retrieval through REST APIs and created a search module that enables users to explore the data by displaying it using charts",
               },
               {
                 image: FacsImage,
                 title: "FaCS Report",
                 description:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna justo, lobortis sed urna sed, convallis dictum sapien. Maecenas sit amet porta ligula.",
+                  "Integrated and enchanced a JavaScript application within the Liferay portal, incorporating additional features to optimize functionality",
               },
               {
                 image: SerchImage,
                 title: "Dynamic search",
                 description:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna justo, lobortis sed urna sed, convallis dictum sapien. Maecenas sit amet porta ligula.",
+                  "Created a complex search module incorporating multiple views and advanced functionalities by leveraging the ElasticSearch API",
               },
               {
                 image: ResearchForm,
                 title: "Research form",
-                description:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna justo, lobortis sed urna sed, convallis dictum sapien. Maecenas sit amet porta ligula.",
+                description: "Implemented a dynamic form for with built-in permission control, for accessing documents",
               },
             ]}
-          />
+          >
+            <Link href="https://msci.com" text="MSCI" /> is a leading provider of critical decision support tools and
+            services for the global investment community. I worked on the project for three years, the initial focus was
+            on upgrading the existing portal from an older version of Liferay, to the latest release. Since then,
+            numerous new features have been incorporated into the site.
+          </Slider>
           <Slider
             imageSliderOnRight={false}
             title="KBC"
-            description="KBC was an irish bank, but sadly they were purchages by Bank of Ireland and the website was discontinued."
             items={[
               {
                 image: Fragments,
                 title: "Responsive elements",
                 description:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna justo, lobortis sed urna sed, convallis dictum sapien. Maecenas sit amet porta ligula.",
+                  "Implemented responsive and interactive fragments to enhance the engagement and user-friendliness of the website, ensuring an optimal experience across different devices",
               },
               {
                 image: LTV,
-                title: "Calculators",
-                description:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna justo, lobortis sed urna sed, convallis dictum sapien. Maecenas sit amet porta ligula.",
+                title: "Interactive value displays",
+                description: "Developed interactive views that dynamically display loan values based on user input",
               },
               {
                 image: Mortgage,
-                title: "Calculators",
+                title: "Calculators and forms",
                 description:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna justo, lobortis sed urna sed, convallis dictum sapien. Maecenas sit amet porta ligula.",
+                  "Developed calculators with interactive sliders and implemented multi-paged forms for seamless loan application processes",
               },
             ]}
-          />
+          >
+            <Link href="https://msci.com" text="KBC Ireland" /> was the Irish subsidiary of the KBC Group, but was
+            bought by Bank of Ireland. The project lasted for about two years, with the goal of developing user-friendly
+            calculators and forms that enabled customers to calculate loan values and easily sign up for various
+            accounts. This project aimed to streamline the customer onboarding process and enhance the overall user
+            experience.
+          </Slider>
         </Divider>
       </div>
       <Footer ref={footerRef} />

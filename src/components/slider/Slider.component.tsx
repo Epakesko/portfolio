@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import "./Slider.styles.scss";
 import useReveal from "../../hooks/useReveal";
 
@@ -10,7 +10,7 @@ type SliderItem = {
 
 type SliderProps = {
   title: string;
-  description: string;
+  children: ReactNode;
   items: SliderItem[];
   imageSliderOnRight?: boolean;
 };
@@ -116,7 +116,7 @@ const TextSlider = ({ className, items, transitioning, startIndex }: TextSliderP
   );
 };
 
-const Slider = ({ title, description, items, imageSliderOnRight = false }: SliderProps) => {
+const Slider = ({ title, children, items, imageSliderOnRight = false }: SliderProps) => {
   const [startIndex, setStartIndex] = useState(0);
   const [textStartIndex, setTextStartIndex] = useState(0);
   const [transitioning, isTransitioning] = useState(false);
@@ -138,7 +138,7 @@ const Slider = ({ title, description, items, imageSliderOnRight = false }: Slide
         className={`slider-texts ${imageSliderOnRight ? "" : "right-aligned-texts"} ${revealed ? "" : "hidden"}`}
       >
         <div className="slider-title">{title}</div>
-        <div className="slider-subtitle">{description}</div>
+        <div className="slider-subtitle">{children}</div>
       </div>
       <div className="slider-container">
         <TextSlider
