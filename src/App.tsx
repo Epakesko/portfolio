@@ -60,7 +60,7 @@ function App() {
         />
       </header>
       <div className="app-body">
-        <Banner />
+        <Banner nextSectionRef={aboutMeSectionRef} />
         <Divider text="About" ref={aboutMeSectionRef}>
           <AboutMe />
         </Divider>

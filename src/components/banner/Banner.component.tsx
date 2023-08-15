@@ -1,7 +1,19 @@
 import { useEffect } from "react";
 import "./Banner.styles.scss";
 
-const Banner = () => {
+type BannerProps = {
+  nextSectionRef: React.MutableRefObject<HTMLDivElement | null>;
+};
+
+type ScrollDownProps = {
+  onClick: Function;
+};
+
+const ScrollDown = ({ onClick }: ScrollDownProps) => {
+  return <div onClick={() => onClick()} className="scroll-down"></div>;
+};
+
+const Banner = ({ nextSectionRef }: BannerProps) => {
   useEffect(() => {
     const masks = ["B", "e", "n", "d", "e-2", "g", "u", "z", "T", "a", "k", "aa", "c", "s"];
 
@@ -15,6 +27,12 @@ const Banner = () => {
       }
     });
   }, []);
+
+  const handleClick = (sectionRef: React.MutableRefObject<HTMLDivElement | null>) => {
+    if (sectionRef.current) {
+      sectionRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <div className="header-text">
@@ -237,6 +255,9 @@ const Banner = () => {
         </svg>
       </span>
       <span className="bottom-line">I bring imagination to reality through code.</span>
+      <div className="scroll-down-container">
+        <ScrollDown onClick={() => nextSectionRef && handleClick(nextSectionRef)} />
+      </div>
     </div>
   );
 };

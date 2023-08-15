@@ -34,7 +34,7 @@
 
   .middle-line {
     font-size: 63px;
-    font-family: "Parisienne", cursive;
+    font-family: $parisienne;
 
     .typed-name {
       opacity: 0;
@@ -51,6 +51,69 @@
     opacity: 0;
     animation: 2s linear 4.5s fadeInAnimation;
     animation-fill-mode: forwards;
+  }
+
+  .scroll-down-container {
+    display: none;
+    position: absolute;
+    bottom: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: 2s linear 6s fadeInAnimation;
+    animation-fill-mode: forwards;
+    transition: bottom 0.4s ease-in-out;
+    cursor: pointer;
+
+    .scroll-down {
+      position: relative;
+      opacity: 0.6;
+      transition: height 0.4s ease-in-out;
+      border: 2px solid $light-parchment;
+      border-radius: 15px;
+      width: 30px;
+      height: 44px;
+
+      &::before {
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(50%);
+        transition: all 0.4s ease-in-out;
+        border-left: 2px solid $light-parchment;
+        height: 10px;
+        content: "";
+      }
+
+      &::after {
+        position: absolute;
+        bottom: calc(50% - 4px);
+        left: 50%;
+        transform: translateX(-50%) translateY(50%) rotateZ(-45deg);
+        transition: bottom 0.4s ease-in-out;
+        border-bottom: 2px solid $light-parchment;
+        border-left: 2px solid $light-parchment;
+        width: 4px;
+        height: 4px;
+        content: "";
+      }
+    }
+
+    &:hover {
+      bottom: 142px;
+
+      .scroll-down {
+        height: 60px;
+
+        &::before {
+          height: 26px;
+        }
+
+        &::after {
+          bottom: calc(50% - 12px);
+        }
+      }
+    }
   }
 }
 
@@ -77,6 +140,10 @@
       text-align: right;
     }
 
+    .scroll-down-container {
+      display: block;
+    }
+
     .middle-line {
       font-size: 0;
       text-align: center;
@@ -96,7 +163,7 @@
 
         .mask {
           fill: black;
-          stroke: #f0f0f0;
+          stroke: $light-parchment;
           stroke-miterlimit: 10;
           transform: translate(var(--translate-x), var(--translate-y));
           animation: strokeOffset var(--animation-length) linear forwards var(--animation-delay);
