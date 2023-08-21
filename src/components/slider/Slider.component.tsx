@@ -108,7 +108,7 @@ const TextSlider = ({ className, items, transitioning, startIndex }: TextSliderP
               : ""
           }`}
         >
-          <div className="item-title">{item.title}</div>
+          <h4 className="item-title">{item.title}</h4>
           <div className="item-description">{item.description}</div>
         </div>
       ))}
@@ -137,7 +137,7 @@ const Slider = ({ title, children, items, imageSliderOnRight = false }: SliderPr
         ref={sliderTextsRef}
         className={`slider-texts ${imageSliderOnRight ? "" : "right-aligned-texts"} ${revealed ? "" : "hidden"}`}
       >
-        <div className="slider-title">{title}</div>
+        <h2 className="slider-title">{title}</h2>
         <div className="slider-subtitle">{children}</div>
       </div>
       <div className="slider-container">
