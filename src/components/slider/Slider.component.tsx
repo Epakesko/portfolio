@@ -1,6 +1,8 @@
 import { ReactNode, useState } from "react";
 import "./Slider.styles.scss";
 import useReveal from "../../hooks/useReveal";
+import "../common/FullscreenableImage.component";
+import FullscreenableImage from "../common/FullscreenableImage.component";
 
 type SliderItem = {
   image: string;
@@ -70,7 +72,7 @@ const ImageSlider = ({ className, handleSlide, items, transitioning, startIndex 
     >
       <button className="slide-back" onClick={() => handleSlide(false)} disabled={transitioning} />
       {items.map((item, i) => (
-        <img
+        <FullscreenableImage
           key={i}
           className={`slider-item ${
             (i + startIndex) % items.length === 0
@@ -81,6 +83,7 @@ const ImageSlider = ({ className, handleSlide, items, transitioning, startIndex 
               ? "next-item"
               : ""
           }`}
+          openable={(i + startIndex) % items.length === 1}
           src={item.image}
           alt=""
         />
