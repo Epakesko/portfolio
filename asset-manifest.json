@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.b9e385fb.css",
+    "main.css": "/static/css/main.150cd91c.css",
     "main.js": "/static/js/main.f5937104.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/red-sea.png": "/static/media/red-sea.25c81799cb8b82af0b53.png",
@@ -25,12 +25,12 @@
     "static/media/sen-regular.woff2": "/static/media/sen-regular.8c00ec432771ee7d9499.woff2",
     "static/media/manrope-thin.woff2": "/static/media/manrope-thin.de406e55c1428924d2c1.woff2",
     "index.html": "/index.html",
-    "main.b9e385fb.css.map": "/static/css/main.b9e385fb.css.map",
+    "main.150cd91c.css.map": "/static/css/main.150cd91c.css.map",
     "main.f5937104.js.map": "/static/js/main.f5937104.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b9e385fb.css",
+    "static/css/main.150cd91c.css",
     "static/js/main.f5937104.js"
   ]
 }
