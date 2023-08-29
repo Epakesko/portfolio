@@ -14,6 +14,7 @@ import LTV from "./media/kbc/ltv_calculator.png";
 import Mortgage from "./media/kbc/mortgage_calculator.png";
 import { useEffect, useRef, useState } from "react";
 import Link from "./components/common/Link.component";
+import ReferenceWorks from "./components/reference_works/ReferenceWorks.component";
 
 function App() {
   const aboutMeSectionRef = useRef<HTMLDivElement>(null);
@@ -64,7 +65,7 @@ function App() {
         <Divider text="About" ref={aboutMeSectionRef}>
           <AboutMe />
         </Divider>
-        <Divider text="Work" ref={workSectionRef}>
+        <Divider text="Select Work" ref={workSectionRef}>
           <Slider
             imageSliderOnRight={true}
             title="MSCI"
@@ -128,6 +129,9 @@ function App() {
             accounts. This project aimed to streamline the customer onboarding process and enhance the overall user
             experience.
           </Slider>
+        </Divider>
+        <Divider text="Other Work">
+          <ReferenceWorks />
         </Divider>
       </div>
       <Footer ref={footerRef} />

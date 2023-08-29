@@ -1,0 +1,92 @@
+@use "../../styles/variables.scss" as *;
+
+.reference-works {
+  display: flex;
+  column-gap: 0;
+  row-gap: 30px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 72px;
+
+  .reference-work {
+    position: relative;
+    width: 100%;
+
+    .reference-link {
+      width: 100%;
+      height: 100%;
+      color: unset;
+      text-decoration: none;
+    }
+
+    img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .overlay {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: rgba($midnight-blue, var(--opacity));
+      text-align: center;
+
+      .name {
+        font-weight: 600;
+      }
+
+      .description {
+        padding: 10px;
+        font-size: 16px;
+      }
+
+      .technologies {
+        font-weight: 500;
+        font-size: 16px;
+      }
+
+      &:hover {
+        --opacity: 0.95;
+        gap: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $tablet) {
+  .reference-works {
+    column-gap: 10%;
+    .reference-work {
+      width: 45%;
+    }
+  }
+}
+
+@media only screen and (min-width: $desktop) {
+  .reference-works {
+    .reference-work {
+      height: 300px;
+
+      .overlay {
+        --opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        justify-content: center;
+        gap: 80px;
+        transition: $fadeInQuick;
+        background-color: rgba($light-parchment, var(--opacity));
+        width: 100%;
+        height: 100%;
+        text-align: center;
+
+        &:hover {
+          --opacity: 0.95;
+          gap: 0;
+        }
+      }
+    }
+  }
+}
