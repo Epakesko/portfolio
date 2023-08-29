@@ -1,9 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.164e7707.css",
-    "main.js": "/static/js/main.cd84dc4c.js",
+    "main.css": "/static/css/main.b9e385fb.css",
+    "main.js": "/static/js/main.f5937104.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
+    "static/media/red-sea.png": "/static/media/red-sea.25c81799cb8b82af0b53.png",
+    "static/media/mate.png": "/static/media/mate.eb4ca2342b046c24e529.png",
+    "static/media/nn.png": "/static/media/nn.3120ddd65adac3041d85.png",
     "static/media/profile_picture.png": "/static/media/profile_picture.20f3135116afc56a2789.png",
+    "static/media/raiffeisen.png": "/static/media/raiffeisen.4bc963b305642e9b14fb.png",
+    "static/media/telecom.png": "/static/media/telecom.612b8ad48a1b0a80dfbf.png",
     "static/media/fragments.png": "/static/media/fragments.449a80963e3b0744d454.png",
     "static/media/CV.pdf": "/static/media/CV.950fc08864cd5be2a3c6.pdf",
     "static/media/esg.png": "/static/media/esg.6dd7b32c3b948598c386.png",
@@ -20,12 +25,12 @@
     "static/media/sen-regular.woff2": "/static/media/sen-regular.8c00ec432771ee7d9499.woff2",
     "static/media/manrope-thin.woff2": "/static/media/manrope-thin.de406e55c1428924d2c1.woff2",
     "index.html": "/index.html",
-    "main.164e7707.css.map": "/static/css/main.164e7707.css.map",
-    "main.cd84dc4c.js.map": "/static/js/main.cd84dc4c.js.map",
+    "main.b9e385fb.css.map": "/static/css/main.b9e385fb.css.map",
+    "main.f5937104.js.map": "/static/js/main.f5937104.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.164e7707.css",
-    "static/js/main.cd84dc4c.js"
+    "static/css/main.b9e385fb.css",
+    "static/js/main.f5937104.js"
   ]
 }
