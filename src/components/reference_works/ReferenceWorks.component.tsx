@@ -4,6 +4,7 @@ import RaiffeisenImage from "../../media/other-work/raiffeisen.png";
 import RedSeaImage from "../../media/other-work/red-sea.png";
 import MateImage from "../../media/other-work/mate.png";
 import RSPCAImage from "../../media/other-work/rspca.png";
+import TelecomImage from "../../media/other-work/telecom.png";
 import { ConditionalWrapper } from "../common/ConditionalWrapper.component";
 import { ReactNode } from "react";
 
@@ -49,12 +50,14 @@ const ReferenceWorks = () => {
         description="Webtown's first project with Saudi partners. Front-end heavy solutions for the best user experience."
         technologies="JavaScript, FreeMarker, CSS"
       />
+      {/* Hello World 
       <ReferenceWork
         image={RSPCAImage}
         name="Royal Society for the Prevention of Cruelty to Animals"
         description="Intranet project that mainly consisted of making Liferay's out-of-the-box functionalities more accessible to the internal users."
         technologies="Java, JavaScript, CSS"
       />
+      */}
       <ReferenceWork
         url="https://raiffeisen.hu"
         image={RaiffeisenImage}
@@ -76,14 +79,17 @@ const ReferenceWorks = () => {
         description="Several smaller projects for the Hungarian site of the NN Group."
         technologies="Java"
       />
+      {/* Hello World 
+        <ReferenceWork
+          image={NNImage}
+          name="Education website"
+          description="An interactive website with lessons and activities that educators can play to their students."
+          technologies="React, Java"
+        />
+      */}
+
       <ReferenceWork
-        image={NNImage}
-        name="Education website"
-        description="An interactive website with lessons and activities that educators can play to their students."
-        technologies="React, Java"
-      />
-      <ReferenceWork
-        image={NNImage}
+        image={TelecomImage}
         name="Telecommunications company"
         description="Portal redesign for an Austrian company, involving several challenging back-end and front-end tasks."
         technologies="Java, JavaScript, React, ElasticSearch"
