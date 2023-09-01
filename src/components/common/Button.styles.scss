@@ -1,0 +1,14 @@
+@use "../../styles/variables.scss" as *;
+
+.button.link {
+  border-color: $midnight-blue;
+  border-radius: 4px;
+  background-color: $grey-blue;
+  padding: 10px;
+  a {
+    color: $midnight-blue;
+    &::after {
+      background-color: $midnight-blue;
+    }
+  }
+}
