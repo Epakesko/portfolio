@@ -6,8 +6,10 @@ import MateImage from "../../media/other-work/mate.png";
 import RSPCAImage from "../../media/other-work/rspca.png";
 import TelecomImage from "../../media/other-work/telecom.png";
 import EduImage from "../../media/other-work/edu.png";
-import { ConditionalWrapper } from "../common/ConditionalWrapper.component";
+import FullscreenableImage from "../common/FullscreenableImage.component";
 import { ReactNode } from "react";
+import { ConditionalWrapper } from "../common/ConditionalWrapper.component";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
 
 type ReferenceWorkProps = {
   image: string;
@@ -18,17 +20,19 @@ type ReferenceWorkProps = {
 };
 
 const ReferenceWork = ({ image, name, description, technologies, url }: ReferenceWorkProps) => {
+  const desktopSize = useMediaQuery("(min-width: 992px)");
+
   return (
     <div className="reference-work">
       <ConditionalWrapper
-        condition={!!url}
+        condition={!!url && !desktopSize}
         wrapper={(children: ReactNode) => (
           <a className="reference-link" href={url}>
             {children}
           </a>
         )}
       >
-        <img alt="background" src={image} />
+        <FullscreenableImage openable={desktopSize} alt="background" src={image} btnText="Check it out" btnHref={url} />
         <div className="overlay">
           <span className="name">{name}</span>
           <div>

@@ -123,8 +123,8 @@ function App() {
               },
             ]}
           >
-            <Link href="https://msci.com" text="KBC Ireland" /> was the Irish subsidiary of the KBC Group, but was
-            bought by Bank of Ireland. The project lasted for about two years, with the goal of developing user-friendly
+            <Link href="https://kbc.ie" text="KBC Ireland" /> was the Irish subsidiary of the KBC Group, but was bought
+            by Bank of Ireland. The project lasted for about two years, with the goal of developing user-friendly
             calculators and forms that enabled customers to calculate loan values and easily sign up for various
             accounts. This project aimed to streamline the customer onboarding process and enhance the overall user
             experience.

@@ -29,7 +29,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      color: rgba($midnight-blue, var(--opacity));
+      pointer-events: none;
       text-align: center;
 
       .name {
@@ -45,8 +45,10 @@
         font-weight: 500;
         font-size: 16px;
       }
+    }
 
-      &:hover {
+    &:hover {
+      .overlay {
         --opacity: 0.95;
         gap: 0;
       }
@@ -65,8 +67,14 @@
 
 @media only screen and (min-width: $desktop) {
   .reference-works {
+    column-gap: 5%;
     .reference-work {
-      height: 300px;
+      cursor: pointer;
+      width: 30%;
+
+      img {
+        height: 100%;
+      }
 
       .overlay {
         --opacity: 0;
@@ -79,9 +87,12 @@
         background-color: rgba($light-parchment, var(--opacity));
         width: 100%;
         height: 100%;
+        color: rgba($midnight-blue, var(--opacity));
         text-align: center;
+      }
 
-        &:hover {
+      &:hover {
+        .overlay {
           --opacity: 0.95;
           gap: 0;
         }
