@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.150cd91c.css",
-    "main.js": "/static/js/main.f5937104.js",
+    "main.css": "/static/css/main.e1d9cc51.css",
+    "main.js": "/static/js/main.3ddf9a67.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/red-sea.png": "/static/media/red-sea.25c81799cb8b82af0b53.png",
     "static/media/mate.png": "/static/media/mate.eb4ca2342b046c24e529.png",
@@ -9,14 +9,16 @@
     "static/media/profile_picture.png": "/static/media/profile_picture.20f3135116afc56a2789.png",
     "static/media/raiffeisen.png": "/static/media/raiffeisen.4bc963b305642e9b14fb.png",
     "static/media/telecom.png": "/static/media/telecom.612b8ad48a1b0a80dfbf.png",
-    "static/media/fragments.png": "/static/media/fragments.449a80963e3b0744d454.png",
+    "static/media/edu.png": "/static/media/edu.9ebc12fef6ae654c772f.png",
+    "static/media/rspca.png": "/static/media/rspca.72a46abbd561f1d37a95.png",
+    "static/media/fragments.png": "/static/media/fragments.eea5f3d59ecef657e7a5.png",
+    "static/media/esg.png": "/static/media/esg.6a57f67dccb11c2d2fc5.png",
     "static/media/CV.pdf": "/static/media/CV.950fc08864cd5be2a3c6.pdf",
-    "static/media/esg.png": "/static/media/esg.6dd7b32c3b948598c386.png",
-    "static/media/ltv_calculator.png": "/static/media/ltv_calculator.db9ce0b644b6464f6ed3.png",
-    "static/media/search.png": "/static/media/search.5ad9641eb559f92068a7.png",
-    "static/media/mortgage_calculator.png": "/static/media/mortgage_calculator.b24a51b03c11ce7025de.png",
-    "static/media/research-form.png": "/static/media/research-form.5a8452528fb80ed0bb08.png",
-    "static/media/facs.png": "/static/media/facs.c6d0392232dab59092fd.png",
+    "static/media/ltv_calculator.png": "/static/media/ltv_calculator.6595a0d17bbeb326e628.png",
+    "static/media/search.png": "/static/media/search.d5496facf4a9d8eaa552.png",
+    "static/media/mortgage_calculator.png": "/static/media/mortgage_calculator.7fbbbcf09dbaa43c7c5e.png",
+    "static/media/research-form.png": "/static/media/research-form.0cac39d82d548d19a3b2.png",
+    "static/media/facs.png": "/static/media/facs.a65ac35aad5101369e74.png",
     "static/media/manrope-bold.woff2": "/static/media/manrope-bold.02fde8ae851aacf5c6a9.woff2",
     "static/media/manrope-medium.woff2": "/static/media/manrope-medium.02fde8ae851aacf5c6a9.woff2",
     "static/media/manrope-regular.woff2": "/static/media/manrope-regular.02fde8ae851aacf5c6a9.woff2",
@@ -25,12 +27,12 @@
     "static/media/sen-regular.woff2": "/static/media/sen-regular.8c00ec432771ee7d9499.woff2",
     "static/media/manrope-thin.woff2": "/static/media/manrope-thin.de406e55c1428924d2c1.woff2",
     "index.html": "/index.html",
-    "main.150cd91c.css.map": "/static/css/main.150cd91c.css.map",
-    "main.f5937104.js.map": "/static/js/main.f5937104.js.map",
+    "main.e1d9cc51.css.map": "/static/css/main.e1d9cc51.css.map",
+    "main.3ddf9a67.js.map": "/static/js/main.3ddf9a67.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.150cd91c.css",
-    "static/js/main.f5937104.js"
+    "static/css/main.e1d9cc51.css",
+    "static/js/main.3ddf9a67.js"
   ]
 }
