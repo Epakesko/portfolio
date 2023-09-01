@@ -1,5 +1,5 @@
 import "./FullscreenableImage.styles.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
@@ -16,6 +16,14 @@ type FullscreenableImageProps = {
 
 const FullscreenableImage = ({ className = "", src, alt, openable, btnText, btnHref }: FullscreenableImageProps) => {
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    document.addEventListener("keydown", event => {
+      if (open && event.key === "Escape") {
+        setOpen(false);
+      }
+    });
+  }, [open]);
 
   return (
     <>
