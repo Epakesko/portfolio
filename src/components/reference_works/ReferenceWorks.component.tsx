@@ -32,7 +32,7 @@ const ReferenceWork = ({ image, name, description, technologies, url }: Referenc
           </a>
         )}
       >
-        <FullscreenableImage openable={desktopSize} alt="background" src={image} btnText="Check it out" btnHref={url} />
+        <FullscreenableImage openable={desktopSize} alt="background" src={image} btnText="Take a look" btnHref={url} />
         <div className="overlay">
           <span className="name">{name}</span>
           <div>
